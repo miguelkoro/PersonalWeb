@@ -8,9 +8,13 @@ import { DataContext } from '../context/DataContext.jsx';
 const NavBar = () => {
   const { t, language, setLanguage } = useContext(DataContext);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLanguageMouseEnter = () => setLanguageMenuOpen(true);
   const handleLanguageMouseLeave = () => setLanguageMenuOpen(false);
+
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const changeLanguage = (newLanguage) => {
     setLanguage(newLanguage);
@@ -21,6 +25,11 @@ const NavBar = () => {
     <>
     <nav className="navbar">
       <div className="navbar-left">
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+        </button>
         <img src={Logo} alt="Logo" className="navbar-logo" />
         <div className="typewriter">
           <p className="navbar-text">Miguelkoro</p>
@@ -67,6 +76,20 @@ const NavBar = () => {
           )}
         </div>
       </div>
+
+      {/* Menú móvil desplegable */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
+          <div className="mobile-menu-content">
+            <a href="#inicio" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.home')}</a>
+            <a href="#sobre-mi" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.aboutme')}</a>
+            <a href="#habilidades" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.skills')}</a>
+            <a href="#proyectos" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.projects')}</a>
+            <a href="#contacto" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.contact')}</a>
+          </div>
+        </div>
+      )}
 
     </nav>
     </>
