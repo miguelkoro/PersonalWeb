@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Page from './components/page.jsx';
 import './styles/index.scss';
 import NavBar from './components/NavBar.jsx';
+import Home from './components/Home.jsx';
+import AboutMe from './components/AboutMe.jsx';
+import Skills from './components/Skills.jsx';
+import Projects from './components/Projects.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
   const [appWidth, setAppWidth] = useState(window.innerWidth);
@@ -89,14 +95,16 @@ function App() {
   );*/
 
   return (
-   <>
-      <div>
-        {/*renderScreens(screens)*/}
-        <NavBar/>
-        <Page boxWidth={appWidth} boxHeight={appHeight}/>
-      </div>
-
-    </>
+  <>
+    <NavBar/>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about-me" element={<AboutMe />} />
+      <Route path="/skills" element={<Skills />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+  </>
   )
 }
 

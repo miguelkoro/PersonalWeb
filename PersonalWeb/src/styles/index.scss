@@ -88,6 +88,7 @@ body {
   transition: all 0.3s ease;
   flex: 0 0 auto; /* No crece, no se encoge, tamaño automático */
   min-width: 200px; /* Ancho mínimo fijo en píxeles */
+  
 }
 
 /* Botón del menú hamburguesa */
@@ -257,6 +258,12 @@ body {
   font-family: 'Montserrat', Courier, monospace;
   text-decoration: none; /* Sin subrayado */
   padding-top: 1.5vmin;
+  /* Evita color azul al pasar el cursor aunque sea un link */
+  &:hover, &:focus, &:active {
+    color: white;
+    text-decoration: none;
+    outline: none;
+  }
   
 }
 
@@ -272,20 +279,20 @@ body {
   overflow: hidden;
   white-space: nowrap;
   position: relative; /* Necesario para el pseudo-elemento */
-  animation: typing 2s steps(9) forwards;
-  width: 0; /* Empieza con ancho 0 */
+  //animation: typing 2s steps(9) forwards;
+  //width: 0; /* Empieza con ancho 0 */
   max-width: fit-content;
 }
 
 .typewriter p::after {
-  content: '';
+  //content: '';
   position: absolute;
   right: 0;
   top: 20%; /* Ajusta la posición vertical del cursor */
   width: 1px; /* Ancho del cursor */
   height: 60%; /* Altura del cursor (más corto) */
   background-color: white;
-  animation: blink 1s step-end infinite 2s, hideCursor 0s forwards 5s;
+  //animation: blink 1s step-end infinite 2s, hideCursor 0s forwards 5s;
 }
 
 @keyframes typing {

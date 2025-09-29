@@ -1,4 +1,5 @@
 import "../styles/index.scss";
+import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import Logo from '../assets/mk_logo.png';
 import enSvg from '../assets/gb.svg';
@@ -32,17 +33,17 @@ const NavBar = () => {
         </button>
         <img src={Logo} alt="Logo" className="navbar-logo" />
         <div className="typewriter">
-          <p className="navbar-text">Miguelkoro</p>
+          <Link to="/" className="navbar-text">Miguelkoro</Link>
         </div>
       </div>
       
       <div className="navbar-center">
         <div className="navbar-manage">
-          <a href="#inicio" className="manage-title">{t('i.home')}</a>
-          <a href="#sobre-mi" className="manage-title">{t('i.aboutme')}</a>
-          <a href="#habilidades" className="manage-title">{t('i.skills')}</a>
-          <a href="#proyectos" className="manage-title">{t('i.projects')}</a>
-          <a href="#contacto" className="manage-title">{t('i.contact')}</a>
+          <Link to="/" className="manage-title">{t('i.home')}</Link>
+          <Link to="/about-me" className="manage-title">{t('i.aboutme')}</Link>
+          <Link to="/skills" className="manage-title">{t('i.skills')}</Link>
+          <Link to="/projects" className="manage-title">{t('i.projects')}</Link>
+          <Link to="/contact" className="manage-title">{t('i.contact')}</Link>
         </div>
       </div>
 
@@ -82,11 +83,11 @@ const NavBar = () => {
         <div className="mobile-menu">
           <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
           <div className="mobile-menu-content">
-            <a href="#inicio" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.home')}</a>
-            <a href="#sobre-mi" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.aboutme')}</a>
-            <a href="#habilidades" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.skills')}</a>
-            <a href="#proyectos" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.projects')}</a>
-            <a href="#contacto" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.contact')}</a>
+            <Link to="/inicio" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.home')}</Link>
+            <Link to="/sobre-mi" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.aboutme')}</Link>
+            <Link to="/habilidades" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.skills')}</Link>
+            <Link to="/proyectos" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.projects')}</Link>
+            <Link to="/contacto" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.contact')}</Link>
           </div>
         </div>
       )}
