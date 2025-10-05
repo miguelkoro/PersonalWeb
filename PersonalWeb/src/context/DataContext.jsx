@@ -6,6 +6,7 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
 
     const [language, setLanguage] = useState('es');
+    const [screen, setScreen] = useState('home'); 
     
     // Función para obtener texto traducido
     const t = (key) => {
@@ -17,7 +18,8 @@ export const DataProvider = ({ children }) => {
             language, 
             setLanguage,
             t, // Función de traducción
-            LOCALES, // Por si necesitas acceso directo
+            LOCALES, 
+            screen, setScreen
         }}>
         {children}
         </DataContext.Provider>

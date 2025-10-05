@@ -34,12 +34,12 @@ function useFollowRotation({ hovered, mouse, baseRotation }) {
 
 function ModelAndCanvasGroup({ mouse, hovered }) {
   const gltf = useGLTF('/computer_3D/scene.gltf');
-  const baseRotation = [Math.PI/22, -Math.PI/19, 0];
+  const baseRotation = [Math.PI/18, -Math.PI/26, 0];
   const groupRef = useFollowRotation({ hovered, mouse, baseRotation });
   return (
     <group ref={groupRef}>
       <primitive object={gltf.scene} scale={4.1} position={[1, 0.5, 0]} />
-      <CanvasPlane position={[1, 0.5, 1.6]} width={1.2} height={0.7} />
+      <CanvasPlane position={[0.84, 0.64, 1.59]} width={0.85} height={0.68} rotation={[-0.07, 0, 0]} />
     </group>
   );
 }
@@ -53,8 +53,8 @@ function CanvasPlane({ position = [0, 1, 0], width = 1.2, height = 0.7 }) {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = 512;
-    canvas.height = 256;
+    canvas.width = 365;//512;
+    canvas.height = 324;//256;
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#222';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -75,7 +75,7 @@ function CanvasPlane({ position = [0, 1, 0], width = 1.2, height = 0.7 }) {
 
   if (!texture) return null;
   return (
-    <mesh ref={meshRef} position={position}>
+    <mesh ref={meshRef} position={position} rotation={arguments[0]?.rotation || [0,0,0]}>
       <planeGeometry args={[width, height]} />
       <meshStandardMaterial map={texture} side={THREE.DoubleSide} />
     </mesh>

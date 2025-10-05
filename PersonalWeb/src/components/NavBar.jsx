@@ -1,13 +1,13 @@
 import "../styles/index.scss";
 import { Link } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Logo from '../assets/mk_logo.png';
 import enSvg from '../assets/gb.svg';
 import esSvg from '../assets/es.svg';
 import { DataContext } from '../context/DataContext.jsx';
 
 const NavBar = () => {
-  const { t, language, setLanguage } = useContext(DataContext);
+  const { t, language, setLanguage, screen, setScreen } = useContext(DataContext);
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,6 +22,8 @@ const NavBar = () => {
     setLanguageMenuOpen(false);
   };
 
+
+
   return (
     <>
     <nav className="navbar">
@@ -31,7 +33,9 @@ const NavBar = () => {
           <div className="hamburger-line"></div>
           <div className="hamburger-line"></div>
         </button>
-        <img src={Logo} alt="Logo" className="navbar-logo" />
+        <Link to="/">
+          <img src={Logo} alt="Logo" className="navbar-logo" />
+        </Link>
         <div className="typewriter">
           <Link to="/" className="navbar-text">Miguelkoro</Link>
         </div>
@@ -39,11 +43,11 @@ const NavBar = () => {
       
       <div className="navbar-center">
         <div className="navbar-manage">
-          <Link to="/" className="manage-title">{t('i.home')}</Link>
-          <Link to="/about-me" className="manage-title">{t('i.aboutme')}</Link>
-          <Link to="/skills" className="manage-title">{t('i.skills')}</Link>
-          <Link to="/projects" className="manage-title">{t('i.projects')}</Link>
-          <Link to="/contact" className="manage-title">{t('i.contact')}</Link>
+          <Link to="/" className={`${screen === 'home' ? 'selected-title' : 'manage-title'}`} onClick={screen === 'home' ? (e => e.preventDefault()) : undefined}>{t('i.home')}</Link>
+          <Link to="/about-me" className={`${screen === 'about-me' ? 'selected-title' : 'manage-title'}`} onClick={screen === 'about-me' ? (e => e.preventDefault()) : undefined}>{t('i.aboutme')}</Link>
+          <Link to="/skills" className={`${screen === 'skills' ? 'selected-title' : 'manage-title'}`} onClick={screen === 'skills' ? (e => e.preventDefault()) : undefined}>{t('i.skills')}</Link>
+          <Link to="/projects" className={`${screen === 'projects' ? 'selected-title' : 'manage-title'}`} onClick={screen === 'projects' ? (e => e.preventDefault()) : undefined}>{t('i.projects')}</Link>
+          <Link to="/contact" className={`${screen === 'contact' ? 'selected-title' : 'manage-title'}`} onClick={screen === 'contact' ? (e => e.preventDefault()) : undefined}>{t('i.contact')}</Link>
         </div>
       </div>
 
@@ -83,11 +87,11 @@ const NavBar = () => {
         <div className="mobile-menu">
           <div className="mobile-menu-overlay" onClick={closeMobileMenu}></div>
           <div className="mobile-menu-content">
-            <Link to="/inicio" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.home')}</Link>
-            <Link to="/sobre-mi" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.aboutme')}</Link>
-            <Link to="/habilidades" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.skills')}</Link>
-            <Link to="/proyectos" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.projects')}</Link>
-            <Link to="/contacto" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.contact')}</Link>
+            <Link to="/" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.home')}</Link>
+            <Link to="/about-me" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.aboutme')}</Link>
+            <Link to="/skills" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.skills')}</Link>
+            <Link to="/projects" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.projects')}</Link>
+            <Link to="/contact" className="mobile-menu-item" onClick={closeMobileMenu}>{t('i.contact')}</Link>
           </div>
         </div>
       )}
