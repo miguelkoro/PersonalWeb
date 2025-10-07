@@ -22,7 +22,16 @@ const NavBar = () => {
     setLanguageMenuOpen(false);
   };
 
-
+  // Cierra el menú móvil si el ancho supera 1352px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1352 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
 
   return (
     <>

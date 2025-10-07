@@ -85,29 +85,17 @@ function CanvasPlane({ position = [0, 1, 0], width = 1.2, height = 0.7 }) {
 
 
 
-const ThreeDAsset = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
-
-  // Handler para mouse move
-  const handlePointerMove = (e) => {
-    setMouse({
-      x: (e.clientX / window.innerWidth) * 2 - 1,
-      y: (e.clientY / window.innerHeight) * 2 - 1,
-    });
-  };
-
+const ThreeDAsset = (props) => {
+  // El canvas ya no controla el hover ni el pointermove
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'visible', zIndex: 1 }}>
       <Canvas
         style={{ width: '100%', height: '100%', overflow: 'visible', background: 'transparent', position: 'absolute', left: 0, top: 0 }}
         camera={{ position: [2, 1.5, 3] }}
-        onPointerMove={e => { setHovered(true); handlePointerMove(e); }}
-        onPointerOut={() => setHovered(false)}
       >
         <ambientLight intensity={0.7} color={new THREE.Color(0xffffff)} />
         <directionalLight position={[2, 2, 2]} intensity={0.7} />
-    <ModelAndCanvasGroup mouse={mouse} hovered={hovered} />
+        <ModelAndCanvasGroup mouse={props.mouse} hovered={true} />
         <OrbitControls enableZoom={false} enablePan={false} enableDamping={true} dampingFactor={0.01} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} minAzimuthAngle={-Math.PI /16} maxAzimuthAngle={Math.PI / 16} />
       </Canvas>
     </div>

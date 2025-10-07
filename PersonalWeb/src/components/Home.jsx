@@ -4,12 +4,21 @@ import ThreeDAsset from './ThreeDAsset.jsx';
 import { DataContext } from '../context/DataContext.jsx';
 
 const Home = () => {
-    const { t, language, setLanguage, screen, setScreen } = useContext(DataContext);
+    const { t, language, setLanguage, screen, setScreen } = useContext(DataContext);    
+    const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+    const handlePointerMove = (e) => {
+        setMouse({
+          x: (e.clientX / window.innerWidth) * 2 - 1,
+          y: (e.clientY / window.innerHeight) * 2 - 1,
+        });
+    };
+
     useEffect(() => {
         setScreen('home');
     }, []);
     return (
-        <div style={{ position: 'relative', width: '100%',  overflow: 'visible' }}>
+        <div style={{ position: 'relative', width: '100%',  overflow: 'visible' }} onMouseMove={handlePointerMove}>
             {/* Columna izquierda: texto y botones */}
             <div style={{
                 position: 'relative',
@@ -20,17 +29,17 @@ const Home = () => {
                 display: 'flex',
                 flexDirection: 'column',
             }}>
-                <h1 className='name_title'>Miguel</h1>
-                <h1 className='name_title'>Coronel</h1>
+                <h1 className='name_title'>Miguel<br />Coronel
+                </h1>
                 <h2 className='job_title'>{t('i.jobtitle')}</h2>
                 <div className='home_buttons'>
-                    <Link to="/projects" style={{ padding: '0.8rem 2.5rem', background: '#4f8cff', color: 'white', borderRadius: '2rem', textDecoration: 'none', fontWeight: 600, fontSize: '1.1rem', boxShadow: '0 2px 8px #0002', width: 'fit-content', textAlign: 'center' }}>Ver proyectos</Link>
-                    <Link to="/contact" style={{ padding: '0.8rem 2.5rem', background: 'transparent', color: '#4f8cff', border: '2px solid #4f8cff', borderRadius: '2rem', textDecoration: 'none', fontWeight: 600, fontSize: '1.1rem', boxShadow: '0 2px 8px #0002', width: 'fit-content', textAlign: 'center' }}>Contactar</Link>
+                    <Link to="/projects" ><button className="home_button_projects"><span>{t('i.seeprojects')}</span></button></Link>
+                    <Link to="/contact" ><button className="home_button"><span>{t('i.contactme')}</span></button></Link>
                 </div>
             </div>
             {/* Fondo 3D interactivo */}
             <div className='background_PC'>
-                <ThreeDAsset />
+                <ThreeDAsset mouse={mouse} handlePointerMove={handlePointerMove} />
             </div>
         </div>
     );
