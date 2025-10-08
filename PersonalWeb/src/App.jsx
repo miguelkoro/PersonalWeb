@@ -6,6 +6,7 @@ import './App.css'
 import Page from './components/page.jsx';
 import './styles/index.scss';
 import NavBar from './components/NavBar.jsx';
+import ThreeBackground from './components/ThreeBackground.jsx';
 import Home from './components/Home.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import Skills from './components/Skills.jsx';
@@ -95,16 +96,17 @@ function App() {
   );*/
 
   return (
-  <>
-    <NavBar/>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about-me" element={<AboutMe />} />
-      <Route path="/skills" element={<Skills />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  </>
+    <>
+      <ThreeBackground />
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </>
   )
 }
 

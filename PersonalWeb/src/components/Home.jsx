@@ -4,7 +4,7 @@ import ThreeDAsset from './ThreeDAsset.jsx';
 import { DataContext } from '../context/DataContext.jsx';
 
 const Home = () => {
-    const { t, language, setLanguage, screen, setScreen } = useContext(DataContext);    
+    const { t, setScreen } = useContext(DataContext);    
     const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
     const handlePointerMove = (e) => {

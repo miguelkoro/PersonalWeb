@@ -12,9 +12,9 @@ body {
   //min-height: 100vh;
   color: white;
   box-sizing: border-box;
-  //background: rgb(37,15,119);
+  
   background: radial-gradient(circle, rgba(37,15,119,1) 0%, rgba(10,24,40,1) 73%, rgba(10,24,40,1) 100%);
-  animation: gradient 15s ease infinite;
+  animation: gradient 10s ease infinite;
   background-size: 150% 150%;
 }
 @keyframes gradient {
@@ -630,12 +630,12 @@ body {
   animation: aurora-text 6s ease-in-out infinite alternate;
   overflow-wrap: anywhere;
   word-break: break-word;
-}
+}*/
 @keyframes aurora-text {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
-}*/
+}
 .name_title{
   font-size: clamp(2.5rem, 8vw, 6rem);
   margin: 0;
@@ -749,7 +749,7 @@ body {
   background: #005eda;
   color: #222;
   border: 2px solid #fff;
-  transition: background 0.4s, color 0.4s;
+  //transition: background 0.4s, color 0.4s;
 }
 
 .home_button_projects > span, .home_button_projects > .home_button-content {
@@ -757,7 +757,7 @@ body {
 }
 
 .home_button_projects:hover {
-  background: transparent;
+  //background: transparent;
   color: #fff;
   border-color: #fff;
   box-shadow:
@@ -813,4 +813,43 @@ body {
 .home_button:active {
   transform: scale(0.95);
 }
-
+//ABOUT ME
+.about-me-title{
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0;
+  z-index: 2;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 #222,
+    4px 4px 8px #000a;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  /*
+  font-size: clamp(2rem, 6vw, 4rem);
+  background-image: 
+      url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 20% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  */
+}
+.about-me-background-image{
+  position: absolute;
+  right: 0;
+  width: 65%;
+  height: auto;
+  right: -10%;
+  top: 8%;
+  //min-width: 60%;
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  filter: none;
+  border-radius: 0;
+  box-shadow: none;
+}

@@ -9,6 +9,12 @@ export let LOCALES = {
     "i.jobtitle": "Software Engineer",
     "i.contactme": "Contact Me",
     "i.seeprojects": "See Projects",
+    "i.education": "Education",
+    "i.profile": "Profile",
+    "i.educationText": "I hold a degree in Computer Engineering from the Universidad Politécnica de Madrid (UPM), where I acquired a strong foundation in software development, algorithms, and systems design. During my studies, I completed various projects that allowed me to apply theoretical knowledge in practical scenarios, enhancing my problem-solving skills and technical expertise.",
+    "i.experience": "Experience",
+    "i.experienceText": "I have worked in diverse roles within the software development field, ranging from systems administration to full-stack development. My experience includes managing Windows and Linux servers, developing web applications using modern frameworks, and collaborating in agile teams to deliver high-quality software solutions. This varied background has equipped me with a comprehensive understanding of the software lifecycle and the ability to adapt to different technologies and environments.",
+    
   },
   es:{
     "i.home": "INICIO",
@@ -20,5 +26,11 @@ export let LOCALES = {
     "i.jobtitle": "Ingeniero de Software",
     "i.contactme": "Contactar",
     "i.seeprojects": "Ver Proyectos",
+    "i.education": "Educación",
+    "i.profile": "Perfil",
+    "i.educationText": "Soy Ingeniero en Informática egresado de la Universidad Politécnica de Madrid (UPM), donde adquirí una sólida base en desarrollo de software, algoritmos y diseño de sistemas. Durante mis estudios, realicé diversos proyectos que me permitieron aplicar conocimientos teóricos en escenarios prácticos, mejorando mis habilidades para resolver problemas y mi expertise técnico.",
+    "i.experience": "Experiencia",
+    "i.experienceText": "He trabajado en roles diversos dentro del campo del desarrollo de software, que van desde la administración de sistemas hasta el desarrollo full-stack. Mi experiencia incluye la gestión de servidores Windows y Linux, el desarrollo de aplicaciones web utilizando frameworks modernos, y la colaboración en equipos ágiles para entregar soluciones de software de alta calidad. Esta trayectoria variada me ha dotado de una comprensión integral del ciclo de vida del software y la capacidad de adaptarme a diferentes tecnologías y entornos.",
+
   },
 };
