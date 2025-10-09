@@ -11,10 +11,21 @@ export let LOCALES = {
     "i.seeprojects": "See Projects",
     "i.education": "Education",
     "i.profile": "Profile",
-    "i.educationText": "I hold a degree in Computer Engineering from the Universidad Politécnica de Madrid (UPM), where I acquired a strong foundation in software development, algorithms, and systems design. During my studies, I completed various projects that allowed me to apply theoretical knowledge in practical scenarios, enhancing my problem-solving skills and technical expertise.",
+    "i.educationText": "My studies and academic background",
     "i.experience": "Experience",
     "i.experienceText": "I have worked in diverse roles within the software development field, ranging from systems administration to full-stack development. My experience includes managing Windows and Linux servers, developing web applications using modern frameworks, and collaborating in agile teams to deliver high-quality software solutions. This varied background has equipped me with a comprehensive understanding of the software lifecycle and the ability to adapt to different technologies and environments.",
-    
+
+    "i.cardFavoriteTechs": "Favorite Technologies",
+    "i.cardFavoriteTechsDescription": "Javascript, React, Node.js, Python, Django, C#, .NET, SQL",
+    "i.cardInterests": "Areas of Interest",
+    "i.cardInterestsDescription": "Web Development, Mobile Applications, Artificial Intelligence, Cybersecurity, DevOps",
+    "i.cardObjectives": "Professional Objectives",
+    "i.cardObjectivesDescription": "Continue learning and growing as a developer, participate in challenging projects, contribute to innovative and high-quality solutions.",
+
+    "i.cardUniversityDegree": "University Degree",
+    "i.cardUniversityDegreeDescription": "Bachelor's Degree in Computer Engineering from the University  ",
+    "i.cardUniversityDegreeTitle": "Software Engineer",
+    "i.cardUniversityDegreeName": "Polytechnic University of Madrid"
   },
   es:{
     "i.home": "INICIO",
@@ -28,9 +39,21 @@ export let LOCALES = {
     "i.seeprojects": "Ver Proyectos",
     "i.education": "Educación",
     "i.profile": "Perfil",
-    "i.educationText": "Soy Ingeniero en Informática egresado de la Universidad Politécnica de Madrid (UPM), donde adquirí una sólida base en desarrollo de software, algoritmos y diseño de sistemas. Durante mis estudios, realicé diversos proyectos que me permitieron aplicar conocimientos teóricos en escenarios prácticos, mejorando mis habilidades para resolver problemas y mi expertise técnico.",
+    "i.educationText": "Mis estudios y formación academica",
     "i.experience": "Experiencia",
     "i.experienceText": "He trabajado en roles diversos dentro del campo del desarrollo de software, que van desde la administración de sistemas hasta el desarrollo full-stack. Mi experiencia incluye la gestión de servidores Windows y Linux, el desarrollo de aplicaciones web utilizando frameworks modernos, y la colaboración en equipos ágiles para entregar soluciones de software de alta calidad. Esta trayectoria variada me ha dotado de una comprensión integral del ciclo de vida del software y la capacidad de adaptarme a diferentes tecnologías y entornos.",
+
+    "i.cardFavoriteTechs": "Tecnologías Favoritas",
+    "i.cardFavoriteTechsDescription": "Javascript, React, Node.js, Python, Django, C#, .NET, SQL",
+    "i.cardInterests": "Áreas de Interés",
+    "i.cardInterestsDescription": "Desarrollo Web, Aplicaciones Móviles, Inteligencia Artificial, Seguridad Informática, DevOps",
+    "i.cardObjectives": "Objetivos Profesionales",
+    "i.cardObjectivesDescription": "Seguir aprendiendo y creciendo como desarrollador, participar en proyectos desafiantes, contribuir a soluciones innovadoras y de alta calidad.",
+
+    "i.cardUniversityDegree": "Grado Universitario",
+    "i.cardUniversityDegreeDescription": "Grado en Ingeniería Informática por la Universidad blablabla ",
+    "i.cardUniversityDegreeTitle": "Ingeniería de Software",
+    "i.cardUniversityDegreeName": "Universidad Politécnica de Madrid",
 
   },
 };
