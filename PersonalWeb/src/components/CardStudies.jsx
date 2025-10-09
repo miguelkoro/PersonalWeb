@@ -1,14 +1,9 @@
 
 import React, { useState } from "react";
 
-const CardStudies = (props) => {
-    const degreeType = props.degreeType || "Grado de Ingeniería";
-    const degreeName = props.degreeName || "Ingeniería de Software";
-    const center = props.center || "Centro de Ejemplo";
-    const logo = props.logo || "/mk_logo.png";
-    const description = props.description || "Descripción breve del curso o grado. Aquí puedes poner información relevante sobre el contenido, duración, competencias, etc.";
-
+const CardStudies = (props) => {   
     const [flipped, setFlipped] = useState(false);
+    const background = props.background || false;
 
     return (
         <div
@@ -20,21 +15,22 @@ const CardStudies = (props) => {
                 {/* Front Side */}
                 <div className="card-studies card-studies-front">
                     <div className="card-studies-header">
-                        <span className="card-studies-degree-type">{degreeType}</span>
+                        <span className="card-studies-degree-type">{props.degreeType}</span>
                         <div className="card-studies-divider" />
                     </div>
-                    <div className="card-studies-title-large">{degreeName}</div>
+                    <div className="card-studies-title-large">{props.degreeName}</div>
                     <div className="card-studies-bottom-row">
-                        <div className="card-studies-center">{center}</div>
                         <div className="card-studies-logo">
-                            <img src={logo} alt="center logo" />
+                            <img src={props.logo} alt="center logo" style={ background ? { backgroundColor: "#ffffff5e", borderRadius: "0.7rem",   } : {} } />
                         </div>
+                        <div className="card-studies-center">{props.center}</div>
+
                     </div>
                 </div>
                 {/* Back Side */}
                 <div className="card-studies card-studies-back">
                     <div className="card-studies-description">
-                        {description}
+                        {props.description}
                     </div>
                 </div>
             </div>

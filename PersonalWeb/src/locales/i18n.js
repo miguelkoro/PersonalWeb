@@ -24,8 +24,22 @@ export let LOCALES = {
 
     "i.cardUniversityDegree": "University Degree",
     "i.cardUniversityDegreeDescription": "Bachelor's Degree in Computer Engineering from the University  ",
-    "i.cardUniversityDegreeTitle": "Software Engineer",
-    "i.cardUniversityDegreeName": "Polytechnic University of Madrid"
+  "i.cardUniversityDegreeTitle": "SOFTWARE ENGINEERING",
+    "i.cardUniversityDegreeCenter": "Polytechnic University of Madrid",
+
+    "i.cardProfessionalDegree": "Higher Vocational Training",
+    "i.cardProfessionalDegreeDescription": "Full-stack web development bootcamp at Ironhack, focusing on modern technologies and industry best practices.",
+    "i.cardProfessionalDegreeTitle": "MULTIPLATFORM APPLICATION DEVELOPMENT",
+    "i.cardProfessionalDegreeCenter": "Afuera Higher Education Center",
+    "i.cardProfessionalDegreeTitle2": "MULTIPLATFORM OPERATING SYSTEMS ADMINISTRATION",
+    "i.cardProfessionalDegreeDescription2": "Higher vocational training in network computer systems administration, with training in Windows and Linux server management, networks, and IT security.",
+    "i.cardProfessionalDegree2": "Intermediate Vocational Training",
+    "i.cardProfessionalDegreeTitle2": "SYSTEMS AND NETWORKS ADMINISTRATION",
+    "i.cardProfessionalDegreeDescription3": "Intermediate vocational training in systems and network administration, with training in server and computer network management.",
+    "i.cardBootcampDegree": "Programming Course",
+    "i.cardBootcampDegreeDescription": "Intensive programming course in Microsoft technologies (C#) at AZPE Informática.",
+    "i.cardBootcampDegreeTitle": "PROGRAMMING IN MICROSOFT TECHNOLOGIES 2010 (C#)",
+    "i.cardBootcampDegreeCenter": "AZPE Informática",
   },
   es:{
     "i.home": "INICIO",
@@ -52,8 +66,22 @@ export let LOCALES = {
 
     "i.cardUniversityDegree": "Grado Universitario",
     "i.cardUniversityDegreeDescription": "Grado en Ingeniería Informática por la Universidad blablabla ",
-    "i.cardUniversityDegreeTitle": "Ingeniería de Software",
-    "i.cardUniversityDegreeName": "Universidad Politécnica de Madrid",
+    "i.cardUniversityDegreeTitle": "INGENIERÍA DE SOFTWARE",
+    "i.cardUniversityDegreeCenter": "Universidad Politécnica de Madrid",
+
+    "i.cardProfessionalDegree": "Ciclo formativo de grado superior",
+    "i.cardProfessionalDegreeDescription": "Bootcamp de desarrollo web full-stack en Ironhack, con enfoque en tecnologías modernas y mejores prácticas de la industria.",
+    "i.cardProfessionalDegreeTitle": "DESARROLLO DE APLICACIONES MULTIPLATAFORMA",
+    "i.cardProfessionalDegreeCenter": "Centro de estudios superiores Afuera",
+    "i.cardProfessionalDegreeTitle2": "ADMINISTRACIÓN DE SISTEMAS OPERATIVOS MULTIPLATAFORMA",
+    "i.cardProfessionalDegreeDescription2": "Ciclo formativo de grado superior en administración de sistemas informáticos en red, con formación en gestión de servidores Windows y Linux, redes y seguridad informática.",
+    "i.cardProfessionalDegree2": "Ciclo formativo de grado medio",
+    "i.cardProfessionalDegreeTitle3": "ADMINISTRACIÓN DE SISTEMAS Y REDES",
+    "i.cardProfessionalDegreeDescription3": "Ciclo formativo de grado medio en administración de sistemas y redes, con formación en gestión de servidores y redes informáticas.",
+    "i.cardBootcampDegree": "Curso de programación",
+    "i.cardBootcampDegreeDescription": "Intensivo de programación en tecnologías Microsoft (C#) en AZPE Informática.",
+    "i.cardBootcampDegreeTitle": "PROGRAMACIÓN EN TECNOLOGÍAS MICROSOFT 2010 (C#)",
+    "i.cardBootcampDegreeCenter": "AZPE Informática",
 
   },
 };
