@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Page from './components/page.jsx';
 import './styles/index.scss';
 import NavBar from './components/NavBar.jsx';
 import ThreeBackground from './components/ThreeBackground.jsx';
