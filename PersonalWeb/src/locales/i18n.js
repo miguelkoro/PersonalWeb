@@ -13,7 +13,7 @@ export let LOCALES = {
     "i.profile": "Profile",
     "i.educationText": "My studies and academic background",
     "i.experience": "Experience",
-    "i.experienceText": "I have worked in diverse roles within the software development field, ranging from systems administration to full-stack development. My experience includes managing Windows and Linux servers, developing web applications using modern frameworks, and collaborating in agile teams to deliver high-quality software solutions. This varied background has equipped me with a comprehensive understanding of the software lifecycle and the ability to adapt to different technologies and environments.",
+    "i.experienceText": "Companies where I have worked or trained.",
 
     "i.cardFavoriteTechs": "Favorite Technologies",
     "i.cardFavoriteTechsDescription": "Javascript, React, Node.js, Python, Django, C#, .NET, SQL",
@@ -24,7 +24,7 @@ export let LOCALES = {
 
     "i.cardUniversityDegree": "University Degree",
     "i.cardUniversityDegreeDescription": "Bachelor's Degree in Computer Engineering from the University  ",
-  "i.cardUniversityDegreeTitle": "SOFTWARE ENGINEERING",
+    "i.cardUniversityDegreeTitle": "SOFTWARE ENGINEERING",
     "i.cardUniversityDegreeCenter": "Polytechnic University of Madrid",
 
     "i.cardProfessionalDegree": "Higher Vocational Training",
@@ -55,7 +55,7 @@ export let LOCALES = {
     "i.profile": "Perfil",
     "i.educationText": "Mis estudios y formación academica",
     "i.experience": "Experiencia",
-    "i.experienceText": "He trabajado en roles diversos dentro del campo del desarrollo de software, que van desde la administración de sistemas hasta el desarrollo full-stack. Mi experiencia incluye la gestión de servidores Windows y Linux, el desarrollo de aplicaciones web utilizando frameworks modernos, y la colaboración en equipos ágiles para entregar soluciones de software de alta calidad. Esta trayectoria variada me ha dotado de una comprensión integral del ciclo de vida del software y la capacidad de adaptarme a diferentes tecnologías y entornos.",
+    "i.experienceText": "Empresas donde he trabajado o me he formado.",
 
     "i.cardFavoriteTechs": "Tecnologías Favoritas",
     "i.cardFavoriteTechsDescription": "Javascript, React, Node.js, Python, Django, C#, .NET, SQL",
@@ -63,12 +63,13 @@ export let LOCALES = {
     "i.cardInterestsDescription": "Desarrollo Web, Aplicaciones Móviles, Inteligencia Artificial, Seguridad Informática, DevOps",
     "i.cardObjectives": "Objetivos Profesionales",
     "i.cardObjectivesDescription": "Seguir aprendiendo y creciendo como desarrollador, participar en proyectos desafiantes, contribuir a soluciones innovadoras y de alta calidad.",
-
+    // Formación Académica
+      //Universidad
     "i.cardUniversityDegree": "Grado Universitario",
     "i.cardUniversityDegreeDescription": "Grado en Ingeniería Informática por la Universidad blablabla ",
     "i.cardUniversityDegreeTitle": "INGENIERÍA DE SOFTWARE",
     "i.cardUniversityDegreeCenter": "Universidad Politécnica de Madrid",
-
+      //Ciclos Formativos
     "i.cardProfessionalDegree": "Ciclo formativo de grado superior",
     "i.cardProfessionalDegreeDescription": "Bootcamp de desarrollo web full-stack en Ironhack, con enfoque en tecnologías modernas y mejores prácticas de la industria.",
     "i.cardProfessionalDegreeTitle": "DESARROLLO DE APLICACIONES MULTIPLATAFORMA",
@@ -82,6 +83,6 @@ export let LOCALES = {
     "i.cardBootcampDegreeDescription": "Intensivo de programación en tecnologías Microsoft (C#) en AZPE Informática.",
     "i.cardBootcampDegreeTitle": "PROGRAMACIÓN EN TECNOLOGÍAS MICROSOFT 2010 (C#)",
     "i.cardBootcampDegreeCenter": "AZPE Informática",
-
+    //Experiencia Laboral
   },
 };

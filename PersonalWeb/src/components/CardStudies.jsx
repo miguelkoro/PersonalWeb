@@ -21,7 +21,7 @@ const CardStudies = (props) => {
                     <div className="card-studies-title-large">{props.degreeName}</div>
                     <div className="card-studies-bottom-row">
                         <div className="card-studies-logo">
-                            <img src={props.logo} alt="center logo" style={ background ? { backgroundColor: "#ffffff5e", borderRadius: "0.7rem",   } : {} } />
+                            <img src={props.logo} alt="center logo" style={ background ? { backgroundColor: "#ffffff75", borderRadius: "0.9rem",   } : {} } />
                         </div>
                         <div className="card-studies-center">{props.center}</div>
 

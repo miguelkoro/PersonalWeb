@@ -6,7 +6,7 @@ const Education = (props) => {
     return (
         <div  id="education" style={{ padding: '4rem 0', textAlign: 'left', paddingBottom: '6rem' }}>
             <h2 className="about-me-title">{t('i.education')}</h2>
-            <p className="education-subtitle">
+            <p className="about-me-subtitle">
 
                 {t('i.educationText')}
             </p>

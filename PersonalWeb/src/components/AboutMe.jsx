@@ -5,6 +5,7 @@ import AboutMeSidebar from './AboutMeSidebar.jsx';
 import ProfileSection from './ProfileSection.jsx';
 import './AboutMeSidebar.scss';
 import Education from './Education.jsx';
+import Experience from './Experience.jsx';
 
 
 
@@ -21,7 +22,7 @@ const AboutMe = () => {
         profile: () => <ProfileSection t={t}/>,
         //skills: t => <><h1>{t('skills')}</h1><p>{t('i.skills')}</p></>,
         education: t => <Education t={t} />,
-        experience: t => <><h1>{t('i.experience')}</h1><p>{t('i.experienceText')}</p></>,
+        experience: t => <Experience t={t} />,
         
         //contact: t => <><h1>{t('contact')}</h1><p>{t('i.contact')}</p></>,
     };

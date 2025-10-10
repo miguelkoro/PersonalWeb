@@ -1051,6 +1051,17 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
+.about-me-subtitle{
+  font-size: 1.3rem;
+  text-align: left;
+  font-weight: 400;
+  //margin: 1rem 0 2rem 0;
+  font-family: "Montserrat", sans-serif;
+  color: #e4e2e2;
+  //line-height: 1.5;
+  //overflow-wrap: anywhere;
+  //word-break: break-word;
+}
 //CARD-STUDIES
 /* --- CardStudies Flip Effect --- */
 .card-studies-management-wrapper{
@@ -1242,3 +1253,204 @@ body {
   transition: color 0.3s;
 }
 
+//Experiencia
+/* Centrado y compactado del timeline */
+.timeline-experience-centered {
+  justify-content: center !important;
+  align-items: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52rem;
+}
+.timeline-center-narrow {
+  max-width: 51rem;
+  margin: 0 auto;
+  gap: 2.5rem !important;
+}
+.timeline-row-tight {
+  min-height: 4.5rem !important;
+  gap: 0.2rem !important;
+}
+.timeline-card-tight {
+  min-width: 18rem !important;
+  max-width: 19rem !important;
+  padding: 0.7rem 1rem 0.7rem 1rem !important;
+  font-size: 0.98rem !important;
+  min-height: 14rem;
+}
+.timeline-bar-circle-wrapper.left {
+  left: -2px;
+}
+.timeline-bar-circle-wrapper.right {
+  right: -2px;
+}
+/* Ajuste para círculos sobre barras y separación de cards */
+.timeline-bar-circle-wrapper {
+  position: relative;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+.timeline-bar-circle-wrapper.left {
+  left: -4px;
+}
+.timeline-bar-circle-wrapper.right {
+  right: -4px;
+}
+.timeline-row-left .timeline-card-terminal.left {
+  margin-left: 2.5rem !important;
+}
+.timeline-row-right .timeline-card-terminal.right {
+  margin-right: 2.5rem !important;
+}
+/* === TIMELINE EXPERIENCE === */
+.timeline-experience-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 32rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 3rem;
+}
+.timeline-bar-vertical {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  /* Efecto: extremos discontinuos/fade, centro continuo */
+  background:
+    /* Fade superior con línea discontinua */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.18) 0px,
+      rgba(255,255,255,0.18) 8px,
+      transparent 8px,
+      transparent 16px
+    ),
+    /* Fade inferior con línea discontinua */
+    repeating-linear-gradient(
+      to top,
+      rgba(120,120,255,0.18) 0px,
+      rgba(120,120,255,0.18) 8px,
+      transparent 8px,
+      transparent 16px
+    ),
+    /* Línea central continua */
+    linear-gradient(to bottom, rgba(255,255,255,0.22) 0%, rgba(120,120,255,0.18) 100%);
+  background-size:
+    100% 16%, /* superior discontinua */
+    100% 16%, /* inferior discontinua */
+    100% 68%;  /* central continua */
+  background-position:
+    top,
+    bottom,
+    center;
+  background-repeat: no-repeat;
+  /* Efecto de desvanecimiento en los extremos discontinuos */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  z-index: 1;
+}
+.timeline-bar-vertical.left {
+  left: 0;
+}
+.timeline-bar-vertical.right {
+  right: 0;
+}
+.timeline-center-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  //gap: 8rem;
+  position: relative;
+  z-index: 2;
+}
+.timeline-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  //min-height: 7.5rem;
+  position: relative;
+}
+.timeline-row-left {
+  justify-content: flex-start;
+}
+.timeline-row-right {
+  justify-content: flex-end;
+}
+.timeline-spacer {
+  flex: 1 1 0;
+}
+.timeline-circle {
+  width: 1.6rem;
+  height: 1.6rem;
+  background: linear-gradient(135deg, #23272e 60%, #8e2de2 100%);
+  border: 3.5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 16px 2px #8e2de2aa, 0 0 0.5rem #23272e;
+  z-index: 3;
+  margin: 0 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-card-terminal {
+  min-width: 18rem;
+  max-width: 28rem;
+  background: #181c23;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 32px 0 #000a, 0 0 0.5rem #8e2de2aa;
+  border: 1.5px solid #2e2e3a;
+  color: #e0e0e0;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 1.08rem;
+  padding: 1.2rem 1.5rem 1.1rem 1.5rem;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  user-select: text;
+}
+.timeline-card-terminal.left {
+  margin-right: auto;
+  margin-left: 0;
+  border-left: 4px solid #8e2de2;
+}
+.timeline-card-terminal.right {
+  margin-left: auto;
+  margin-right: 0;
+  border-right: 4px solid #8e2de2;
+}
+.timeline-card-terminal::before {
+  //content: '● Terminal';
+  display: block;
+  font-size: 0.92rem;
+  color: #8e2de2cc;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.04em;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  opacity: 0.85;
+}
+/*@media (max-width: 900px) {
+  .timeline-experience-wrapper {
+    flex-direction: column;
+    min-height: 0;
+  }
+  .timeline-bar-vertical.left, .timeline-bar-vertical.right {
+    display: none;
+  }
+  .timeline-center-column {
+    gap: 3.5rem;
+  }
+  .timeline-card-terminal {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.98rem;
+    padding: 1rem 0.7rem 1rem 0.7rem;
+  }
+}*/
