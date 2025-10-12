@@ -21,7 +21,7 @@ const CardExperience = (props) => {
             <div style={{display: 'flex', alignItems: 'center', width: '100%', marginBottom: '0.7rem'}}>
                 {/* SVG izquierda */}
                 <div style={{flex: '0 0 48px', display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="38px" viewBox="0 -960 960 960" width="38px">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px">
                         <defs>
                             <linearGradient id="edu-gradient3" x1="0" y1="0" x2="1" y2="1">
                                 <stop offset="0%" stopColor="#b62bf7ff" />
@@ -49,7 +49,7 @@ const CardExperience = (props) => {
                     <p style={{marginBottom:"-0.7rem"}}><span className="terminal-text-7">&lt;{t('i.company')}&gt;</span> </p>
                     <p style={{marginLeft:"1rem", marginBottom:"-0.7rem"}}><span className="terminal-text-2">&lt;{t('i.name')}&gt; </span>
                     <span className="terminal-text-6">{props.name}</span>
-                    <span className="terminal-text-2"> &lt;{t('i.name')}&gt;</span></p>
+                    <span className="terminal-text-2"> &lt;/{t('i.name')}&gt;</span></p>
 
                     <p style={{marginLeft:"1rem", marginBottom:"-0.7rem"}}><span className="terminal-text-4">&lt;{t('i.role')}&gt; </span>
                     <span className="terminal-text-3">{props.role}</span>

@@ -3,7 +3,6 @@ import { useState, useContext, useEffect, useRef } from 'react';
 import { DataContext } from '../context/DataContext.jsx';
 import AboutMeSidebar from './AboutMeSidebar.jsx';
 import ProfileSection from './ProfileSection.jsx';
-import './AboutMeSidebar.scss';
 import Education from './Education.jsx';
 import Experience from './Experience.jsx';
 

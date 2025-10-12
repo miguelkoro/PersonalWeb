@@ -1,5 +1,4 @@
 import React from 'react';
-import './AboutMeSidebar.scss';
 import { useContext,  } from 'react';
 import { DataContext } from '../context/DataContext.jsx';
 

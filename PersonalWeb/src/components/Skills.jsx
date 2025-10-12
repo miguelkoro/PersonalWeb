@@ -1,5 +1,7 @@
 import {DataContext} from '../context/DataContext';
 import { useState, useContext, useEffect, useRef } from 'react';
+import SkillSection from './SkillSection.jsx';
+import Carousel from './Carousel.jsx';
 
 const Skills = () => {
     const { t, setScreen } = useContext(DataContext);
@@ -9,8 +11,17 @@ const Skills = () => {
     
     return (
         <div>
-            <h1>{t('i.skills')}</h1>
-            <p>{t('i.skillsText')}</p>
+            <div id="skills" style={{ padding: '4rem 0', textAlign: 'center', paddingBottom: '6rem' }}>
+                <h2 className="skills-title" style={{textAlign: 'center'}}>{t('i.skills')}</h2>
+                <Carousel/>
+                <div className='card-skills-wrapper' >
+                    <SkillSection t={t} />
+                    <SkillSection t={t} />
+                    <SkillSection t={t} />
+                    <SkillSection t={t} />
+                    <SkillSection t={t} />
+                </div>
+            </div>
         </div>
     );
 }

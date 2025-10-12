@@ -1564,4 +1564,235 @@ body {
 .terminal-text-7{
   color: #ff8a65;
 }
+//HABILIDADES SKILLS
+/* Centrar la card-skill respecto a la página */
+/* Centrar la card-skill respecto a la página */
+.card-skill{
+  min-height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /* Malla de cuadrados de fondo */
+  .background-card-skill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* El contenido principal debe ir por encima de la malla */
+    > *:not(.background-card-skill) {
+      position: relative;
+      z-index: 2;
+    }
+    display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .background-card-skill .tile {
+    pointer-events: auto;
+    background: #5e5e5e13;
+    border: 1px solid #888a8e1a;
+    opacity: 0.7;
+    margin: 2px;
+    box-shadow: 0 0 0px 0px #1a2a5f22;
+    transition: opacity 0.35s, box-shadow 0.35s, background 0.35s;
+    width: 100%;
+    height: 100%;
+  }
+  /* Efecto linterna: centro y anillos */
+  .background-card-skill .tile.light-0 {
+    opacity: 0.85;
+    background: #a32aff57;
+    box-shadow: 0 0 8px 2px #a12aff33;
+    z-index: 3;
+  }
+  .background-card-skill .tile.light-1 {
+    opacity: 0.7;
+    background: #a32aff3d;
+    box-shadow: 0 0 6px 1px #a12aff22;
+    z-index: 2;
+  }
+  .background-card-skill .tile.light-2 {
+    opacity: 0.55;
+    background: #a12aff22;
+    box-shadow: 0 0 3px 1px #a12aff11;
+    z-index: 1;
+  }
+  .background-card-skill .tile.light-3 {
+    opacity: 0.4;
+    background: #a12aff0d;
+    box-shadow: 0 0 1px 0px #a12aff08;
+    z-index: 1;
+  }
+  background-color: #6060611f;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(24, 24, 27, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 10rem;
+  max-width: 55rem;
+  width: 100%;
+  //height: auto;
+  position: relative;
+  transition: box-shadow .25s, transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+  //cursor: pointer;
+}
+.card-skill:hover {
+  box-shadow:
+    0 0 16px 4px #8e2de288,
+    0 0 32px 12px #4a00e044;
+  transform: scale(1.02);
+}
+.skills-title{
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0;
+  z-index: 2;
+  padding-bottom: 4rem;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 #222,
+    4px 4px 8px #000a;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  /*
+  font-size: clamp(2rem, 6vw, 4rem);
+  background-image: 
+      url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 20% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  */
+}
+.skills-subtitle{
+  font-size: 1.3rem;
+  text-align: left;
+  font-weight: 400;
+  //margin: 1rem 0 2rem 0;
+  font-family: "Montserrat", sans-serif;
+  color: #f8f7f7;
+  //line-height: 1.5;
+  //overflow-wrap: anywhere;
+  //word-break: break-word;
+}
+  /* Tonos random para tiles iluminados aleatoriamente */
+  .background-card-skill .tile.random-tone-1 {
+    background: #a32aff55;
+    box-shadow: 0 0 8px 2px #a32aff22;
+    opacity: 0.6;
+  }
+  .background-card-skill .tile.random-tone-2 {
+    background: #a32aff33;
+    box-shadow: 0 0 8px 2px #a32aff11;
+    opacity: 0.5;
+  }
+  .background-card-skill .tile.random-tone-3 {
+    background: #a32aff99;
+    box-shadow: 0 0 8px 2px #a32aff44;
+    opacity: 0.7;
+  }
+  .background-card-skill .tile.random-tone-4 {
+    background: #a32aff22;
+    box-shadow: 0 0 8px 2px #a32aff08;
+    opacity: 0.4;
+  }
+.card-skills-wrapper{
+  display: grid; /* Cambia a Grid Layout */
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1rem)); /* Máximo 5 columnas */
+  //row-gap: 0.5vmin; /* Espaciado entre las tarjetas */  
+  justify-items: center; /* Alinea las tarjetas a la izquierda */ 
+  justify-content: center;
+  padding: 1rem; /* Espaciado interno */
+  gap: 6rem;
+  /*box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+// --- SkillSection Card Header Layout ---
+.card-skill-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.card-skill-icon {
+  flex: 0 0 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-skill-title {
+  flex: 1 1 75%;
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.card-skill-desc {
+  //margin-top: 0.5rem;
+  font-size: 1.05rem;
+  color: #bdbdbd;
+}
 
+.card-carousel {
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 1em;
+  border: 1px solid rgba(255,255,255,0.5);
+  text-shadow: 0 0 1em rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(20px);
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+}
+// --- Tilt corners effect for Carousel card ---
+.tilt-corners {
+  position: relative;
+  perspective: 600px;
+  transition: transform 0.2s cubic-bezier(.4,2,.6,1);
+}
+.tilt-corners .corner {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  z-index: 2;
+}
+.tilt-corners .corner-tl { left: 0; top: 0; cursor: pointer; }
+.tilt-corners .corner-tr { right: 0; top: 0; cursor: pointer; }
+.tilt-corners .corner-bl { left: 0; bottom: 0; cursor: pointer; }
+.tilt-corners .corner-br { right: 0; bottom: 0; cursor: pointer; }
+
+.tilt-corners:hover { z-index: 2; }
+.tilt-corners .corner-tl:hover,
+.tilt-corners .corner-tl:focus {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.04);
+}
+.tilt-corners .corner-tl:hover,
+.tilt-corners .corner-tl:focus {
+  /* Aplica a la card entera */
+  transform: rotateX(10deg) rotateY(10deg) scale(1.04);
+}
+.tilt-corners .corner-tr:hover,
+.tilt-corners .corner-tr:focus {
+  transform: rotateX(10deg) rotateY(-10deg) scale(1.04);
+}
+.tilt-corners .corner-bl:hover,
+.tilt-corners .corner-bl:focus {
+  transform: rotateX(-10deg) rotateY(10deg) scale(1.04);
+}
+.tilt-corners .corner-br:hover,
+.tilt-corners .corner-br:focus {
+  transform: rotateX(-10deg) rotateY(-10deg) scale(1.04);
+}
+.tilt-corners {
+  transition: transform 0.22s cubic-bezier(.4,2,.6,1);
+}
+.tilt-corners img {
+  display: block;
+  border-radius: 1em;
+}
