@@ -1,8 +1,5 @@
-
-
 import React, { useRef, useEffect, useState } from "react";
 import CardCarousel from "./CardCarousel";
-
 
 
 
@@ -89,12 +86,16 @@ const Carousel = (props) => {
             ref={wrapperRef}
             style={{
                 overflow: 'hidden',
-                paddingLeft: sidePadding,
-                paddingRight: sidePadding,
+                paddingLeft: '0.1rem',
+                paddingRight: '0.1rem',
                 paddingTop: '3rem',
                 paddingBottom: '2.5rem',
                 maxWidth: '60rem',
                 margin: '0 auto',
+                position: 'relative',
+                clipPath: 'ellipse(40% 100% at 50% 50%)',
+                WebkitClipPath: 'ellipse(40% 100% at 50% 50%)',
+                transition: 'clip-path 0.4s',
             }}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}

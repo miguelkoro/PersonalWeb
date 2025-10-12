@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from "react";
 
 const CardCarousel = (props) => {
@@ -48,7 +47,18 @@ const CardCarousel = (props) => {
         setHovered(false);
     };
 
+    // Devuelve estilos de fade visual según el prop fadeAmount (0 a 1)
+    function getFadeStyle() {
+        const fade = typeof props.fadeAmount === 'number' ? props.fadeAmount : 1;
+        const blur = 6 * (1 - fade); // hasta 6px de blur cuando fade=0
+        return {
+            opacity: fade,
+            filter: `blur(${blur}px)`
+        };
+    }
+
     return (
+        <>
         <div
             className="card-carousel tilt-corners"
             ref={cardRef}
@@ -56,10 +66,11 @@ const CardCarousel = (props) => {
             onMouseLeave={handleMouseLeave}
             onMouseEnter={() => setHovered(true)}
             style={{
-                transition: "transform 0.22s cubic-bezier(.4,2,.6,1)",
+                transition: "transform 0.22s cubic-bezier(.4,2,.6,1), opacity 0.4s, filter 0.4s",
                 boxSizing: 'border-box',
                 position: 'relative',
                 overflow: 'hidden',
+                ...getFadeStyle()
             }}
         >
             <img 
@@ -91,7 +102,7 @@ const CardCarousel = (props) => {
                 {props.title}
             </div>}
         </div>
-    );
+    </>);
 };
 
 export default CardCarousel;

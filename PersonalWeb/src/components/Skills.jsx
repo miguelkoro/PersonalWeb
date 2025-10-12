@@ -15,7 +15,7 @@ const Skills = () => {
         <CardCarousel key={2} title="React" imageSrc="/React-Logo.png" />,
         <CardCarousel key={3} title="Node.js" imageSrc="/NodeJS-Logo.png" />,
         <CardCarousel key={4} title="HTML5" imageSrc="/HTML-Logo.png" />,
-        <CardCarousel key={5} title="CSS3" imageSrc="/CSS-Logo.png" />,
+        <CardCarousel key={5} title="CSS3" imageSrc="/CSS-Logo.png"  />,
         <CardCarousel key={6} title="Git" imageSrc="/Git-Logo.png" />,
         <CardCarousel key={7} title="Docker" imageSrc="/Docker-Logo.png" />,
         <CardCarousel key={8} title="Python" imageSrc="/Python-Logo.png" />,

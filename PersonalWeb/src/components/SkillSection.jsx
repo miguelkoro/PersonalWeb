@@ -46,8 +46,15 @@ const SkillSection = (props) => {
 
     return (
         <div className="card-skill" >
-            <div className="card-skill-header">
-                <div className="card-skill-icon">
+            <div className="card-skill-header" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                minHeight: '5rem',
+                justifyContent: 'flex-start',
+                gap: '1rem',
+            }}>
+                <div className="card-skill-icon" style={{height: '5rem', width: '5rem', display: 'flex', alignItems: 'center', flexShrink: 0}}>
                     <span className="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" height="5rem" viewBox="0 -960 960 960" width="5rem">
                             <defs>
@@ -60,12 +67,12 @@ const SkillSection = (props) => {
                         </svg> 
                     </span>
                 </div>
-                <div className="card-skill-title">
-                    <h4>{title}</h4>
+                <div className="card-skill-title" style={{display: 'flex', alignItems: 'center'}}>
+                    <h4 style={{margin: 0, padding: 0}}>{title}</h4>
                 </div>
             </div>
-            <div className="card-skill-desc">
-                <p>
+            <div className="card-skill-desc" style={{marginTop: '0.5rem'}}>
+                <p style={{margin: 0}}>
                 {description}
                 </p>
             </div>
