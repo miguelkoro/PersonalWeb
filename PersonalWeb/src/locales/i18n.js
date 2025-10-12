@@ -118,5 +118,17 @@ export let LOCALES = {
     "i.companyRole3": "Desarrollador .NET (Prácticas)",
     "i.companySkills3": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
     "i.companyDate3": "Ene 2023 - Jun 2023",
+
+    //Skills
+    "i.skillDev": "Desarrollo",
+    "i.skillDevText": "Experiencia en el desarrollo de aplicaciones web utilizando tecnologías y frameworks modernos. Competente en el desarrollo tanto del lado del cliente como del servidor, con un enfoque en la creación de interfaces receptivas y fáciles de usar.",
+    "i.skillSysAdmin": "Administración de Sistemas",
+    "i.skillSysAdminText": "Experiencia en la gestión y mantenimiento de servidores Windows y Linux, incluyendo la instalación, configuración y solución de problemas. Conocimiento de protocolos de red, prácticas de seguridad y monitoreo del sistema.",
+    "i.skillDB": "Bases de Datos",
+    "i.skillDBText": "Experiencia en el diseño, implementación y gestión de bases de datos relacionales utilizando SQL. Competente en la escritura de consultas complejas, optimización del rendimiento de la base de datos y garantía de la integridad de los datos.",
+    "i.skillTools": "Herramientas y Metodologías",
+    "i.skillToolsText": "Familiaridad con sistemas de control de versiones (Git), contenedorización (Docker) y prácticas de integración continua/despliegue continuo (CI/CD). Fuertes habilidades de resolución de problemas y capacidad para trabajar en un entorno de equipo.",
+    "i.skillFrameworks": "Frameworks y Librerías",
+    "i.skillsFrameworksText": "React, Node.js, Express, Django, .NET",
   },
 };

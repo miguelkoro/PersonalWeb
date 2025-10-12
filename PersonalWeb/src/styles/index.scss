@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,709;1,709&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
@@ -1585,8 +1584,8 @@ body {
       z-index: 2;
     }
     display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     justify-content: center;
     align-items: center;
     pointer-events: none;
@@ -1631,8 +1630,8 @@ body {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(24, 24, 27, 0.08);
   padding: 2rem;
   border-radius: 15px;
-  min-width: 10rem;
-  max-width: 55rem;
+  min-width: 8rem;
+  max-width: 20rem;
   width: 100%;
   //height: auto;
   position: relative;
@@ -1650,7 +1649,7 @@ body {
   font-size: clamp(2rem, 6vw, 4rem);
   margin: 0;
   z-index: 2;
-  padding-bottom: 4rem;
+  //padding-bottom: 3rem;
   text-align: left;
   font-family: "Roboto", sans-serif;
   color: #fff;
@@ -1709,7 +1708,7 @@ body {
   justify-items: center; /* Alinea las tarjetas a la izquierda */ 
   justify-content: center;
   padding: 1rem; /* Espaciado interno */
-  gap: 6rem;
+  gap: 4rem;
   /*box-sizing: border-box; /* Incluye el padding en el tamaño total */
 }
 // --- SkillSection Card Header Layout ---
@@ -1742,57 +1741,50 @@ body {
 .card-carousel {
   margin: auto;
   padding: 0.5rem;
-  border-radius: 1em;
-  border: 1px solid rgba(255,255,255,0.5);
-  text-shadow: 0 0 1em rgba(0,0,0,0.5);
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(20px);
-  transform: perspective(500px);
+  align-items: center;
+  display: flex;
+  border-radius: 1.1rem;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  //text-shadow: 0 0 1em rgba(0,0,0,0.5);
+  background: rgba(194, 159, 255, 0.034);
+  backdrop-filter: blur(14px) saturate(140%);
+  transform: perspective(50rem);
   transform-style: preserve-3d;
+  width: 8rem;
+  height: 8rem;
+  min-width: 8rem;
+  max-width: 8rem;
+  flex: 0 0 8rem;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
 }
-// --- Tilt corners effect for Carousel card ---
-.tilt-corners {
-  position: relative;
-  perspective: 600px;
-  transition: transform 0.2s cubic-bezier(.4,2,.6,1);
-}
-.tilt-corners .corner {
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  z-index: 2;
-}
-.tilt-corners .corner-tl { left: 0; top: 0; cursor: pointer; }
-.tilt-corners .corner-tr { right: 0; top: 0; cursor: pointer; }
-.tilt-corners .corner-bl { left: 0; bottom: 0; cursor: pointer; }
-.tilt-corners .corner-br { right: 0; bottom: 0; cursor: pointer; }
 
-.tilt-corners:hover { z-index: 2; }
-.tilt-corners .corner-tl:hover,
-.tilt-corners .corner-tl:focus {
-  transform: rotateX(10deg) rotateY(10deg) scale(1.04);
+
+.card-carousel:hover {
+  //box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.28), 0 2px 8px 0 rgba(0,0,0,0.10);
+  border-color: rgba(255,255,255,0.32);
+  transform: scale(1.01); //translateY(-2px);
+  box-shadow:
+    0 0 12px 2px #a159ffb4,
+    0 0 24px 4px #1f64f7bb,
+    0 0 0.2rem #23272e;
+  //border: 2.5px solid;
+  //border-image: linear-gradient(120deg, #b62bf7, #1f63f7, #b62bf7 80%) 1;
+  animation: neon-border-move 2.2s linear infinite;
 }
-.tilt-corners .corner-tl:hover,
-.tilt-corners .corner-tl:focus {
-  /* Aplica a la card entera */
-  transform: rotateX(10deg) rotateY(10deg) scale(1.04);
+
+// Carousel horizontal track spacing
+.carousel-glass-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  will-change: transform;
+  gap: 5rem;
 }
-.tilt-corners .corner-tr:hover,
-.tilt-corners .corner-tr:focus {
-  transform: rotateX(10deg) rotateY(-10deg) scale(1.04);
+// Carousel horizontal track
+.carousel-glass-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  will-change: transform;
 }
-.tilt-corners .corner-bl:hover,
-.tilt-corners .corner-bl:focus {
-  transform: rotateX(-10deg) rotateY(10deg) scale(1.04);
-}
-.tilt-corners .corner-br:hover,
-.tilt-corners .corner-br:focus {
-  transform: rotateX(-10deg) rotateY(-10deg) scale(1.04);
-}
-.tilt-corners {
-  transition: transform 0.22s cubic-bezier(.4,2,.6,1);
-}
-.tilt-corners img {
-  display: block;
-  border-radius: 1em;
-}
+
