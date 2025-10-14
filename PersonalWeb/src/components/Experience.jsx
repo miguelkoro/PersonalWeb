@@ -1,4 +1,5 @@
 import CardExperience from "./CardExperience";
+import Footer from './Footer.jsx';
 const Experience = (props) => {
     const { t } = props;
 
@@ -23,6 +24,7 @@ const Experience = (props) => {
     ]
 
     return (
+        <>
         <div id="experience" style={{ padding: '4rem 0', textAlign: 'left'}}>
             <h2 className="about-me-title">{t('i.experience')}</h2>
             <p className="about-me-subtitle">
@@ -42,6 +44,7 @@ const Experience = (props) => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

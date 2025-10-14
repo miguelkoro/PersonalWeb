@@ -45,6 +45,7 @@ const SkillSection = (props) => {
     };
 
     return (
+        <>
         <div className="card-skill" >
             <div className="card-skill-header" style={{
                 display: 'flex',
@@ -99,6 +100,7 @@ const SkillSection = (props) => {
                 
             </div>
         </div>
+        </>
     );
 }
 export default SkillSection;

@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ThreeDAsset from './ThreeDAsset.jsx';
 import { DataContext } from '../context/DataContext.jsx';
+import Footer from './Footer.jsx';
 
 const Home = () => {
     const { t, setScreen } = useContext(DataContext);    
@@ -17,7 +18,7 @@ const Home = () => {
     useEffect(() => {
         setScreen('home');
     }, []);
-    return (
+    return (<>
         <div style={{ position: 'relative', width: '100%',  overflow: 'visible' }} onMouseMove={handlePointerMove}>
             {/* Columna izquierda: texto y botones */}
             <div style={{
@@ -42,6 +43,8 @@ const Home = () => {
                 <ThreeDAsset mouse={mouse} handlePointerMove={handlePointerMove} />
             </div>
         </div>
+        <Footer />
+    </>
     );
 };
 

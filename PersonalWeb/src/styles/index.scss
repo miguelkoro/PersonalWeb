@@ -19,6 +19,43 @@ body {
   animation: gradient 10s ease infinite;
   background-size: 150% 150%;
 }
+footer{
+  //padding-top: 65rem;
+  width: 100%;
+  //flex-direction: column;
+  text-align: center;
+  padding: 0.4rem 0;
+  background-color: rgba(40, 44, 52, 0.432);
+  color: white;
+  position: fixed;
+  margin-top: auto;
+  bottom: 0;
+  left: 0;
+  font-size: 0.75rem;
+  box-shadow: 0 -2px 5px rgba(17, 17, 17, 0.2);
+  z-index: 5; /* Asegura que esté por encima de otros elementos */
+}
+.credits-footer {
+  background: rgba(20, 10, 40, 0.6);
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(230, 220, 255, 0.6);
+  padding: 1rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.credits-footer a {
+  color: #bca4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.credits-footer a:hover {
+  color: #dcd0ff;
+  text-shadow: 0 0 5px #a78bfa;
+}
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -1002,7 +1039,7 @@ body {
   box-shadow: 2px 2px 12px #0003;
   opacity: 0;
   pointer-events: none;
-  z-index: 98;
+  z-index: 2;
   left: 100%;
   transform: translateY(-30%);
   transition: opacity 0.25s, transform 0.25s;

@@ -5,6 +5,7 @@ import AboutMeSidebar from './AboutMeSidebar.jsx';
 import ProfileSection from './ProfileSection.jsx';
 import Education from './Education.jsx';
 import Experience from './Experience.jsx';
+import Footer from './Footer.jsx';
 
 
 
@@ -74,6 +75,7 @@ const AboutMe = () => {
     }, [section, sectionOrder]);
 
     return (
+        <>
         <div style={{ display: 'flex', minHeight: '100% - 5rem)' }}>
             <AboutMeSidebar currentSection={section} onSectionChange={setSection} />
             <div style={{ marginLeft: 60, flex: 1 }}>
@@ -88,6 +90,8 @@ const AboutMe = () => {
                 ))}
             </div>
         </div>
+        
+        </>
     );
 };
 
