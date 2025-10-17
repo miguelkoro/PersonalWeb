@@ -5,8 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
-
-
+import CanvasPlane from './CanvasPlane.jsx';
 
 
 function useFollowRotation({ hovered, mouse, baseRotation }) {
@@ -39,48 +38,14 @@ function ModelAndCanvasGroup({ mouse, hovered }) {
   return (
     <group ref={groupRef}>
       <primitive object={gltf.scene} scale={4.1} position={[1, 0.5, 0]} />
-      <CanvasPlane position={[0.84, 0.64, 1.59]} width={0.85} height={0.68} rotation={[-0.07, 0, 0]} />
+      <CanvasPlane position={[0.84, 0.65, 1.59]} width={0.85} height={0.66} rotation={[-0.07, 0, 0]} />
     </group>
   );
 }
 
 
 
-function CanvasPlane({ position = [0, 1, 0], width = 1.2, height = 0.7 }) {
-  const meshRef = useRef();
-  const canvasRef = useRef(document.createElement('canvas'));
-  const [texture, setTexture] = useState(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    canvas.width = 365;//512;
-    canvas.height = 324;//256;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#222';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // Cargar imagen
-    const img = new window.Image();
-    img.src = '/canvas_image.jpg'; // Debe estar en public/
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, 256, 256); // Ajusta posición/tamaño
-      const tex = new THREE.CanvasTexture(canvas);
-      tex.needsUpdate = true;
-      setTexture(tex);
-    };
-  }, []);
-
-  useFrame(() => {
-    if (texture) texture.needsUpdate = true;
-  });
-
-  if (!texture) return null;
-  return (
-    <mesh ref={meshRef} position={position} rotation={arguments[0]?.rotation || [0,0,0]}>
-      <planeGeometry args={[width, height]} />
-      <meshStandardMaterial map={texture} side={THREE.DoubleSide} />
-    </mesh>
-  );
-}
 
 
 
