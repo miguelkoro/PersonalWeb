@@ -57,6 +57,20 @@ export let LOCALES = {
     "i.companyRole3": " .NET Developer (Internship)",
     "i.companySkills3": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
     "i.companyDate3": "Jan 2023 - Jun 2023",
+
+    "i.skillDev": "Development",
+    "i.skillDevText": "Experience in developing web applications using modern technologies and frameworks. Proficient in both client-side and server-side development, with a focus on creating responsive and user-friendly interfaces.",
+    "i.skillSysAdmin": "Systems Administration",
+    "i.skillSysAdminText": "Experience in managing and maintaining Windows and Linux servers, including installation, configuration, and troubleshooting. Knowledge of network protocols, security practices, and system monitoring.",
+    "i.skillDB": "Databases",
+    "i.skillDBText": "Experience in designing, implementing, and managing relational databases using SQL. Proficient in writing complex queries, optimizing database performance, and ensuring data integrity.",
+    "i.skillTools": "Tools & Technologies",
+    "i.skillToolsText": "Familiarity with version control systems (Git), containerization (Docker), and continuous integration/continuous deployment (CI/CD) practices. Strong problem-solving skills and ability to work in a team environment.",
+    "i.skillFrameworks": "Frameworks & Libraries",
+    "i.skillsFrameworksText": "Proficient in popular frameworks and libraries such as React, Node.js, Express, Django, and .NET, enabling efficient development of scalable and maintainable applications.",
+    "i.underconstruction": "Page Under Construction",
+    "i.underconstructionText": "We're working on this page. Check back soon.",
+
   },
   es:{
     "i.home": "INICIO",
@@ -130,5 +144,7 @@ export let LOCALES = {
     "i.skillToolsText": "Familiaridad con sistemas de control de versiones (Git), contenedorización (Docker) y prácticas de integración continua/despliegue continuo (CI/CD). Fuertes habilidades de resolución de problemas y capacidad para trabajar en un entorno de equipo.",
     "i.skillFrameworks": "Frameworks y Librerías",
     "i.skillsFrameworksText": "React, Node.js, Express, Django, .NET",
+    "i.underConstruction": "Página en Construcción",
+    "i.underConstructionText": "Estamos trabajando en esta página. Vuelve pronto.",
   },
 };

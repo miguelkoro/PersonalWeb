@@ -1,5 +1,6 @@
 import {DataContext} from '../context/DataContext';
 import { useState, useContext, useEffect, useRef } from 'react';
+import InConstruction from './InConstruction';
 
 const Contact = () => {
     const { t, setScreen } = useContext(DataContext);
@@ -10,7 +11,8 @@ const Contact = () => {
     return (
         <div>
             <h1>{t('i.contact')}</h1>
-            <p>{t('i.contactText')}</p>
+            {/*<p>{t('i.contactText')}</p>*/}
+            <InConstruction />
         </div>
     );
 }

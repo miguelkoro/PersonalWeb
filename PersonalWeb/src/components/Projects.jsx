@@ -7,6 +7,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 import { Link } from 'react-router-dom';
 import ThreeDAsset from './ThreeDAsset.jsx';
 import ThreeDProject from './ThreeDProject.jsx';
+import InConstruction from './InConstruction.jsx';
 
 const Projects = () => {
     const { t, setScreen } = useContext(DataContext);
@@ -35,6 +36,7 @@ const Projects = () => {
             </div>
         </div>
         <Footer />
+        <InConstruction />
     </>
     );
 }
