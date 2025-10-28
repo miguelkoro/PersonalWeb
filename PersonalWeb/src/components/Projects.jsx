@@ -36,7 +36,7 @@ const Projects = () => {
             </div>
         </div>
         <Footer />
-        <InConstruction />
+        {/*<InConstruction />*/}
     </>
     );
 }
