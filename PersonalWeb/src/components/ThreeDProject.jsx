@@ -18,19 +18,19 @@ const FloppyAnimated = (props) => {
     const outlineClones = useMemo(() => {
         if (!floppy || !floppy.scene) return null;
 
-        // thickness values and corresponding alpha for glow layers (outermost first)
-        const layers = [0.09, 0.05, 0.02];
+    // thickness values for two lightweight glow layers (outer -> inner)
+    const layers = [0.06, 0.03];
         const baseColor = new THREE.Color('#8737d1');
 
-        // alpha for each layer (outermost -> innermost)
-        const alphas = [0.25, 0.5, 0.9];
+    // alphas for each layer (outer -> inner)
+    const alphas = [0.18, 0.36];
         return layers.map((thickness, i) => {
             // shader material displacing along normals
             const mat = new THREE.ShaderMaterial({
                 uniforms: {
                     thickness: { value: thickness },
                     outlineColor: { value: baseColor.clone() },
-                    alpha: { value: alphas[i] || 0.5 }
+                    alpha: { value: alphas[i] || 0.2 }
                 },
                 vertexShader: `
                     uniform float thickness;
@@ -63,6 +63,46 @@ const FloppyAnimated = (props) => {
         });
     }, [floppy]);
 
+    // Option B: a simpler fallback using MeshBasicMaterial clones (robust silhouette, less shader fiddling)
+    // Enabled by default for user testing (set to false to use shader-based outlineClones)
+    const useBasicOutline = true;
+    const outlineClonesBasic = useMemo(() => {
+    if (!floppy || !floppy.scene) return null;
+    const layers = [0.06, 0.03];
+    const baseColor = new THREE.Color('#8737d1');
+    const alphas = [0.18, 0.5];
+
+        return layers.map((thickness, i) => {
+            // Basic material painted on back faces; we'll scale clones slightly outward
+            const mat = new THREE.MeshBasicMaterial({
+                color: baseColor.clone(),
+                side: THREE.BackSide,
+                transparent: true,
+                opacity: alphas[i] || 0.25
+            });
+            // additive-ish look
+            mat.blending = THREE.AdditiveBlending;
+            // respect depth but don't write it so the silhouette doesn't occlude the real mesh
+            mat.depthTest = true;
+            mat.depthWrite = false;
+
+            const clone = floppy.scene.clone(true);
+            clone.traverse((c) => {
+                if (c.isMesh) {
+                    c.material = mat;
+                    c.material.polygonOffset = true;
+                    c.material.polygonOffsetFactor = -2;
+                    c.material.polygonOffsetUnits = -4;
+                    c.renderOrder = 999;
+                }
+            });
+
+            // userData to control per-layer scale when rendering
+            clone.userData.__glowScale = 1 + i * 0.03;
+            return clone;
+        });
+    }, [floppy]);
+
     // Smooth transition with an exponential ease (frame-rate independent)
     useFrame((_, delta) => {
         if (!groupRef.current) return;
@@ -91,13 +131,16 @@ const FloppyAnimated = (props) => {
 
     return (
         <group ref={groupRef} position={[0, 0, 0]}>
-            {/* render stacked outline clones behind model when hovered to produce silhouette + glow */}
-            {hovered && outlineClones && outlineClones.map((clone, i) => (
+            {/* render stacked outline clones behind model when hovered to produce silhouette + glow
+                if useBasicOutline is true we render `outlineClonesBasic` (MeshBasicMaterial fallback)
+            */}
+            {hovered && (useBasicOutline ? outlineClonesBasic : outlineClones) && (useBasicOutline ? outlineClonesBasic : outlineClones).map((clone, i) => (
                 <primitive
                     key={i}
                     object={clone}
                     rotation={[Math.PI / 2, -Math.PI / 2, 0]}
-                    scale={0.05}
+                    // allow per-layer scale so outer layers envelope the model
+                    scale={0.05 * (clone.userData?.__glowScale || 1)}
                     position={[0, 0, props.positionZ]}
                 />
             ))}
@@ -105,7 +148,7 @@ const FloppyAnimated = (props) => {
             {/* invisible plane in front to reliably capture pointer events */}
             <mesh
                 position={[0, 0, props.positionZ]}
-                onPointerOver={(e) => { e.stopPropagation(); setHovered(true); }}
+                onPointerOver={(e) => { e.stopPropagation(); setHovered(true);  }}
                 onPointerOut={(e) => { e.stopPropagation(); setHovered(false); }}
                 onPointerDown={(e) => { e.stopPropagation(); onClick(e); }}
             >

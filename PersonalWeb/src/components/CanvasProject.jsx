@@ -7,6 +7,28 @@ function CanvasProject({ position = [0, 1, 0], width , height , rotation }) {
   const canvasRef = useRef(document.createElement('canvas'));
   const [texture, setTexture] = useState(null);
 
+  const drawCRT_Effect = (canvas,ctx) => {
+    //const width = ctx.canvas.width;
+    //const height = ctx.canvas.height;
+    const img = new window.Image();
+    img.src = '/canvas_image.jpg'; // Debe estar en public/
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, 512, 256); // Ajusta posición/tamaño
+      
+    };
+  };
+
+  const drawImage = (ctx, canvas, imgSrc) => {
+    const img = new window.Image();
+    img.src = imgSrc;
+    img.onload = () => {
+      ctx.drawImage(img, 0, 0, 512, 256); // Ajusta posición/tamaño
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.needsUpdate = true;
+      setTexture(tex);
+    };
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = 512;//512;
@@ -15,14 +37,9 @@ function CanvasProject({ position = [0, 1, 0], width , height , rotation }) {
     ctx.fillStyle = '#222';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     // Cargar imagen
-    const img = new window.Image();
-    img.src = '/Projects/ESCAPP/TV_EST.png'; // Debe estar en public/
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, 512, 256); // Ajusta posición/tamaño
-      const tex = new THREE.CanvasTexture(canvas);
-      tex.needsUpdate = true;
-      setTexture(tex);
-    };
+    drawImage(ctx, canvas,'/Projects/ESCAPP/TV_EST.png');
+    //drawImage(ctx, canvas,'/Projects/ESCAPP/TV_RET.png');
+    //drawCRT_Effect(canvas,ctx);
   }, []);
 
   useFrame(() => {
