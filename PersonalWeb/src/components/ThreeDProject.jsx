@@ -1,15 +1,67 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useRef, useEffect, useState } from 'react';
-import CanvasPlane from './CanvasPlane.jsx';
+import { useRef, useEffect, useState, useMemo } from 'react';
+import CanvasProject from './CanvasProject.jsx';
 import CanvasFloppy from './CanvasFloppy.jsx';
 
 const FloppyAnimated = (props) => {
     const floppy = useGLTF('/floppy/scene.gltf');
     const meshRef = useRef();
     const groupRef = useRef();
-    const selectedPositionY = 0.3; // target Y when selected
+    const [hovered, setHovered] = useState(false);
+    const selectedPositionY = 0.5; // target Y when selected
+
+    // Create multiple back-face clones with additive blending to approximate a silhouette rim + glow.
+    // We render a few layers with increasing "thickness" (displacement along normal) and decreasing opacity
+    // to create a smooth glow outward from the silhouette. This avoids adding postprocessing dependencies.
+    const outlineClones = useMemo(() => {
+        if (!floppy || !floppy.scene) return null;
+
+        // thickness values and corresponding alpha for glow layers (outermost first)
+        const layers = [0.09, 0.05, 0.02];
+        const baseColor = new THREE.Color('#8737d1');
+
+        // alpha for each layer (outermost -> innermost)
+        const alphas = [0.25, 0.5, 0.9];
+        return layers.map((thickness, i) => {
+            // shader material displacing along normals
+            const mat = new THREE.ShaderMaterial({
+                uniforms: {
+                    thickness: { value: thickness },
+                    outlineColor: { value: baseColor.clone() },
+                    alpha: { value: alphas[i] || 0.5 }
+                },
+                vertexShader: `
+                    uniform float thickness;
+                    void main() {
+                      vec3 displaced = position + normal * thickness;
+                      gl_Position = projectionMatrix * modelViewMatrix * vec4(displaced, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    uniform vec3 outlineColor;
+                    uniform float alpha;
+                    void main() {
+                      gl_FragColor = vec4(outlineColor, alpha);
+                    }
+                `,
+                side: THREE.BackSide,
+                depthWrite: false,
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+
+            const clone = floppy.scene.clone(true);
+            clone.traverse((c) => {
+                if (c.isMesh) {
+                    c.material = mat;
+                }
+            });
+
+            return clone;
+        });
+    }, [floppy]);
 
     // Smooth transition with an exponential ease (frame-rate independent)
     useFrame((_, delta) => {
@@ -30,12 +82,40 @@ const FloppyAnimated = (props) => {
         if (groupRef.current) groupRef.current.position.y = props.selected ? selectedPositionY : 0;
     }, []); // run once on mount
 
+    const onClick = (e) => {
+        // prefer onClick prop (passed from parent), fallback to onSelect/index pattern
+        console.log('Floppy clicked');
+        if (props.onClick) return props.onClick(e);
+        if (props.onSelect && typeof props.index !== 'undefined') return props.onSelect(props.index);
+    };
+
     return (
         <group ref={groupRef} position={[0, 0, 0]}>
+            {/* render stacked outline clones behind model when hovered to produce silhouette + glow */}
+            {hovered && outlineClones && outlineClones.map((clone, i) => (
+                <primitive
+                    key={i}
+                    object={clone}
+                    rotation={[Math.PI / 2, -Math.PI / 2, 0]}
+                    scale={0.05}
+                    position={[0, 0, props.positionZ]}
+                />
+            ))}
+
+            {/* invisible plane in front to reliably capture pointer events */}
+            <mesh
+                position={[0, 0, props.positionZ]}
+                onPointerOver={(e) => { e.stopPropagation(); setHovered(true); }}
+                onPointerOut={(e) => { e.stopPropagation(); setHovered(false); }}
+                onPointerDown={(e) => { e.stopPropagation(); onClick(e); }}
+            >
+                <planeGeometry args={[0.45, 0.45]} />
+                <meshBasicMaterial transparent opacity={0} depthTest={false} />
+            </mesh>
+
             <primitive
                 object={floppy.scene.clone(true)}
                 ref={meshRef}
-                //onPointerDown={onClick}
                 rotation={[Math.PI / 2, -Math.PI / 2, 0]}
                 scale={0.05}
                 position={[0, 0, props.positionZ]}
@@ -68,7 +148,7 @@ const ThreeDProject = (props) => {
     const floppyArray = [
         { positionZ: 0, title: 'WEB PERSONAL', description: ['This is a description for WEB PERSONAL'], tags: ['HTML', 'CSS'], colors: ['#ff5733', '#33c1ff'] },
         { positionZ: 0.1, title: 'SOMETHING', description: ['This is a description for SOMETHING HERE'], tags: ['JavaScript'], colors: ['#ff33a1'] },
-        { positionZ: 0.2, title: 'ESCAPP UPM', description: ['This is a description for ESCAPP UPM, blabla mola mucho y tiene muchas cositas'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
+        { positionZ: 0.2, title: 'ESCAPP UPM', description: ['This is a description for ESCAPP UPM, blabla mola mucho y no se que mas poner'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
     ];
 
     // Single source of truth for selection
@@ -82,7 +162,12 @@ const ThreeDProject = (props) => {
                 <ambientLight intensity={0.7} color={new THREE.Color(0xffffff)} />
                 <directionalLight position={[2, 2, 2]} intensity={0.7} />
                 <primitive object={computer.scene}  scale={4.8} position={[0.85, 0, 0]} rotation={[0, -Math.PI / 18, 0]} />
-                {/*<CanvasPlane position={[0.84, 0.65, 1.59]} width={0.85} height={0.66} rotation={[-0.07, 0, 0]} />*/}
+                <pointLight position={[0.31, 0.2, 1.9]}
+                    color={'#9adefd'} intensity={2}
+                    distance={4}    /* increase to spread further across the scene */
+                    decay={0.15}       /* lower decay -> less sharp falloff */
+                />
+                <CanvasProject position={[0.345, 0.179, 1.79]} width={0.967} height={0.749} rotation={[-0.07, -Math.PI/18, 0]} />
                 <group ref={floppyRef} rotation={[ 0,Math.PI/12 ,0]} position={[-0.72,-0.35,1.83]} scale={1.2}>
                     {floppyArray.map((item, index) => (
                             <FloppyAnimated

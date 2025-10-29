@@ -46,8 +46,8 @@ function CanvasFloppy(props) {
   }
   function drawDescription(ctx, text) {
     // padding desde el borde izquierdo/derecho en px
-    const paddingX = Math.round(ctx.canvas.width * 0.09); // ejemplo 9%
-    const paddingTop = Math.round(ctx.canvas.height * 0.35); // altura de inicio
+    const paddingX = Math.round(ctx.canvas.width * 0.03); // ejemplo 9%
+    const paddingTop = Math.round(ctx.canvas.height * 0.30); // altura de inicio
     // setea la fuente ANTES de medir y envolver
     const fontSizePx = Math.round(ctx.canvas.height * 0.12); // ajusta a tu gusto
     ctx.font = `${fontSizePx}px Arial, sans-serif`;
@@ -66,7 +66,7 @@ function CanvasFloppy(props) {
   }
   const drawTags = (ctx, tags = [], colors = []) => {
     const paddingX = Math.round(ctx.canvas.width * 0.09);
-    const paddingTop = Math.round(ctx.canvas.height * 0.86);
+    const paddingTop = Math.round(ctx.canvas.height * 0.92);
     const fontSizePx = Math.round(ctx.canvas.height * 0.095);
     const innerPadding = Math.round(ctx.canvas.width * 0.02); // padding inside tag box
     const gap = Math.round(ctx.canvas.width * 0.02); // gap between tags
