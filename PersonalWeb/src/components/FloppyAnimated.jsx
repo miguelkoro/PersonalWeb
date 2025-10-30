@@ -10,7 +10,7 @@ const FloppyAnimated = (props) => {
     const groupRef = useRef();
     const { gl } = useThree();
     const [hovered, setHovered] = useState(false);
-    const selectedPositionY = 0.5; // target Y when selected
+    const selectedPositionY = 0.3; // target Y when selected
 
     //const tex = useTexture(props.texture);
     

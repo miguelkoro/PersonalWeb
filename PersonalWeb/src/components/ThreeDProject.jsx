@@ -25,6 +25,7 @@ const ThreeDProject = (props) => {
     const models = [
         '/floppy_grey/scene.gltf',
         '/floppy_blue/scene.gltf',
+        '/floppy_orange/scene.gltf',
         //useLoader(THREE.TextureLoader, '/floppy/textures/green.png')
     ];
 
@@ -32,7 +33,7 @@ const ThreeDProject = (props) => {
     const floppyArray = [
         { positionZ: 0, positionX: 0.1, title: 'WEB PERSONAL', model: models[1], description: ['This is a description for WEB PERSONAL'], tags: ['HTML', 'CSS'], colors: ['#ff5733', '#33c1ff'] },
         { positionZ: 0.01, positionX: 0.05, title: 'SOMETHING', model: models[0], description: ['This is a description for SOMETHING HERE'], tags: ['JavaScript'], colors: ['#ff33a1'] },
-        { positionZ: 0.02, positionX: 0, title: 'ESCAPP UPM', model: models[1], description: ['This is a description for ESCAPP UPM, blabla mola mucho y no se que mas poner'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
+        { positionZ: 0.02, positionX: 0, title: 'ESCAPP UPM', model: models[2], description: ['This is a description for ESCAPP UPM, blabla mola mucho y no se que mas poner'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
     ];
 
     // Single source of truth for selection
@@ -48,7 +49,7 @@ const ThreeDProject = (props) => {
                 <primitive object={computer.scene}  scale={4.8} position={[0.85, 0, 0]} rotation={[0, -Math.PI / 18, 0]} />
                 <pointLight position={[0.31, 0.2, 1.9]} color={'#9adefd'} intensity={2} distance={4} decay={0.15} />
                 <CanvasProject position={[0.345, 0.179, 1.79]} width={0.967} height={0.749} rotation={[-0.07, -Math.PI/18, 0]} />
-                <group ref={floppyRef} rotation={[ 0,Math.PI/12 ,0]} position={[-0.72,-0.35,1.9]} scale={1.2}>
+                <group ref={floppyRef} rotation={[ 0,Math.PI/12 ,0]} position={[-0.7,-0.35,2]} scale={1.2}>
                     {floppyArray.map((item, index) => (
                             <FloppyAnimated
                                 key={index} positionZ={item.positionZ} model={item.model} positionX={item.positionX} selected={index === selectedIndex} onClick={() => setSelectedIndex(index)}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Floppy
+* source:	https://sketchfab.com/3d-models/floppy-289fccd9b1904d32afe8fab12cd4994a
+* author:	ocean (https://sketchfab.com/owocean)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Floppy" (https://sketchfab.com/3d-models/floppy-289fccd9b1904d32afe8fab12cd4994a) by ocean (https://sketchfab.com/owocean) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
