@@ -29,15 +29,31 @@ const ThreeDProject = (props) => {
         //useLoader(THREE.TextureLoader, '/floppy/textures/green.png')
     ];
 
+    const positions = [
+        { x: 0.08, z: 0 },
+        { x: 0.04, z: 0.01 },
+        { x: 0, z: 0.02 }
+    ];
+
     // Data array for floppys (kept as `floppyArray` so you can customize text/other props)
     const floppyArray = [
-        { positionZ: 0, positionX: 0.1, title: 'WEB PERSONAL', model: models[1], description: ['This is a description for WEB PERSONAL'], tags: ['HTML', 'CSS'], colors: ['#ff5733', '#33c1ff'] },
-        { positionZ: 0.01, positionX: 0.05, title: 'SOMETHING', model: models[0], description: ['This is a description for SOMETHING HERE'], tags: ['JavaScript'], colors: ['#ff33a1'] },
-        { positionZ: 0.02, positionX: 0, title: 'ESCAPP UPM', model: models[2], description: ['This is a description for ESCAPP UPM, blabla mola mucho y no se que mas poner'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
+        { title: 'WEB PERSONAL', model: models[1], description: ['This is a description for WEB PERSONAL'], tags: ['HTML', 'CSS'], colors: ['#ff5733', '#33c1ff'] },
+        { title: 'SOMETHING', model: models[0], description: ['This is a description for SOMETHING HERE'], tags: ['JavaScript'], colors: ['#ff33a1'] },
+        { title: 'ESCAPP UPM', model: models[2], description: ['This is a description for ESCAPP UPM, blabla mola mucho y no se que mas poner'], tags: ['React', 'JS', 'HTML', 'CSS'], colors: ['#00b922ff', '#d32701ff', '#9eca00ff', '#0061cfff'] }
     ];
 
     // Single source of truth for selection
     const [selectedIndex, setSelectedIndex] = useState(floppyArray.length - 1);
+
+    const [positionsList, setPositionsList] = useState([0,1,2]);
+
+    const floppyOnClick = (index) => {
+        setSelectedIndex(index);
+        setPositionsList(prev => {
+            const filtered = prev.filter(v => v !== index);
+            return [...filtered, index];
+        });
+    };
 
     return (
         <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'visible', zIndex: 1 }}>
@@ -46,16 +62,34 @@ const ThreeDProject = (props) => {
                 camera={{ position: [0, 0, 3] }}>
                 <ambientLight intensity={0.7} color={new THREE.Color(0xffffff)} />
                 <directionalLight position={[2, 2, 2]} intensity={0.7} />
-                <primitive object={computer.scene}  scale={4.8} position={[0.85, 0, 0]} rotation={[0, -Math.PI / 18, 0]} />
+                <group scale={1.03}>
+                    <primitive object={computer.scene}  scale={4.8} position={[0.85, 0, 0]} rotation={[0, -Math.PI / 18, 0]} /><CanvasProject position={[0.345, 0.179, 1.79]} width={0.967} height={0.749} rotation={[-0.07, -Math.PI/18, 0]} />
+                    <CanvasProject position={[0.345, 0.179, 1.79]} width={0.967} height={0.749} rotation={[-0.07, -Math.PI/18, 0]} />
+                </group>
                 <pointLight position={[0.31, 0.2, 1.9]} color={'#9adefd'} intensity={2} distance={4} decay={0.15} />
-                <CanvasProject position={[0.345, 0.179, 1.79]} width={0.967} height={0.749} rotation={[-0.07, -Math.PI/18, 0]} />
-                <group ref={floppyRef} rotation={[ 0,Math.PI/12 ,0]} position={[-0.7,-0.35,2]} scale={1.2}>
-                    {floppyArray.map((item, index) => (
+                
+                <group ref={floppyRef} rotation={[ 0,Math.PI/26 ,0]} position={[-0.48,-0.1,2.3]} scale={1}>
+                    {positionsList.map((floppyIdx, slotIdx) => {
+                        const item = floppyArray[floppyIdx];
+                        if (!item) return null;
+                        return (
                             <FloppyAnimated
-                                key={index} positionZ={item.positionZ} model={item.model} positionX={item.positionX} selected={index === selectedIndex} onClick={() => setSelectedIndex(index)}
-                                title={item.title} description={item.description} tags={item.tags} colors={item.colors}
+                                key={`${floppyIdx}-${slotIdx}`}
+                                index={floppyIdx}
+                                position={slotIdx}
+                                positions={positions}
+                                model={item.model}
+                                selected={floppyIdx === selectedIndex}
+                                // pass finalize handler; child will call this after its animation completes
+                                onMoveDone={floppyOnClick}
+                                title={item.title}
+                                description={item.description}
+                                tags={item.tags}
+                                colors={item.colors}
+                                positionsList={positionsList}
                             />
-                    ))}
+                        );
+                    })}
                 </group>
             </Canvas>
             {/* Flecha de interfaz HTML/CSS en la zona central izquierda */}
