@@ -1,7 +1,18 @@
 
 const CardProject = (props) => {
+	const handleOpen = () => {
+		if (typeof props.onOpen === 'function') props.onOpen();
+	};
+
+	const onKeyDown = (e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			handleOpen();
+		}
+	};
+
 	return (
-		<div className="card-projects" tabIndex={0}>
+		<div className="card-projects" tabIndex={0} role="button" onClick={handleOpen} onKeyDown={onKeyDown}>
 			<div className="card-projects__content">
 				<h3 className="card-projects__title">{props.title}</h3>
 				<div className="card-projects__divider" />
@@ -19,8 +30,12 @@ const CardProject = (props) => {
 
 				{Array.isArray(props.tags) && props.tags.length > 0 ? (
 					<div className="card-projects__tags">
-						{props.tags.map((tag) => (
-							<span key={tag} className="card-projects__tag" style={{backgroundColor: props.tagColor || '#1f64f7bb'}}>
+						{props.tags.slice(0, 3).map((tag, index) => (
+							<span
+								key={`${tag}-${index}`}
+								className="card-projects__tag"
+								style={{ backgroundColor: props.tagsColor ? props.tagsColor[index] : '#1f64f7bb' }}
+							>
 								{tag}
 							</span>
 						))}
