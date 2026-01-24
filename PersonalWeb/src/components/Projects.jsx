@@ -40,6 +40,26 @@ const Projects = () => {
             //demoUrl: 'https://example.com',
             //githubUrl: 'https://github.com/miguelkoro',
         },
+        { 
+            id: 'FrontendTDW', 
+            title: t('i.projectTitle3'), 
+            description: t('i.projectDescription3'), 
+            longDescription: t('i.projectLongDescription3'), 
+            tags: ['HTML', 'CSS', 'React', 'JS'], 
+            tagsColor: ['#ca360dff', '#025692ff', '#148f14ff', '#c58000ff'],
+            demoUrl: 'https://miguelkoro.github.io/ProyectoTDW/',
+            githubUrl: 'https://github.com/miguelkoro/ProyectoTDW/tree/main',
+            imageSrc: '/Projects/TDW/FrontTDW.png',
+        },
+        { 
+            id: 'BackendTDW', 
+            title: t('i.projectTitle4'), 
+            description: t('i.projectDescription4'), 
+            longDescription: t('i.projectLongDescription4'), 
+            tags: ['PHP', 'MySQL', 'Slim 4'],
+            tagsColor: ['#c00202ff', '#2086caff', '#6d7275ff'],
+            githubUrl: 'https://github.com/miguelkoro/TDWProject_Backend',
+        },
         {
             id: 'WebThreeJS',
             title: t('i.projectTitle2'),
@@ -51,8 +71,6 @@ const Projects = () => {
             githubUrl: 'https://github.com/miguelkoro/Threejs',
             demoUrl: 'https://miguelkoro.github.io/WebPersonal/',
         },
-        { id: 'p3', title: 'Project 3', description: 'Description of Project 3', longDescription: 'Description of Project 3', tags: [] },
-        { id: 'p4', title: 'Project 4', description: 'Description of Project 4', longDescription: 'Description of Project 4', tags: [] },
         { 
             id: 'WebCanvas', 
             title: t('i.projectTitle5'), 
@@ -63,6 +81,14 @@ const Projects = () => {
             //imageSrc: '/Projects/Canvas/Canvas.png',
             githubUrl: 'https://github.com/miguelkoro/TVWeb',
         },
+        {
+            id: 'AppCSharp',
+            title: t('i.projectTitle6'),
+            description: t('i.projectDescription6'),
+            longDescription: t('i.projectLongDescription6'),
+            tags: ['C#', 'MySQL'],
+            tagsColor: ['#4d8800ff', '#2086caff'],
+        }
         //{ id: 'p6', title: 'Project 6', description: 'Description of Project 6', longDescription: 'Description of Project 6', tags: [] },
     ];
 

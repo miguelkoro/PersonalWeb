@@ -2142,9 +2142,11 @@ footer{
   inset: 0;
   z-index: 900; /* below .navbar (1000) so navbar stays crisp */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 1.2rem;
+  padding-top: calc(5rem + 1.2rem);
+  //padding-bottom: 2.4rem;
 
   background: rgba(20, 10, 40, 0.55);
   backdrop-filter: blur(10px);
@@ -2152,15 +2154,20 @@ footer{
 
 .project-window-overlay__content{
   width: min(56rem, 100%);
+  //max-height: calc(100vh - (5rem));
 }
 
 .project-window{
+  --project-window-media-h: 60vh;
   border-radius: 1.1rem;
   background: rgba(103, 53, 240, 0.24);
   backdrop-filter: blur(14px) saturate(140%);
   box-shadow: 0 8px 32px 0 rgba(27, 34, 136, 0.212);
   overflow: hidden;
   padding: 0;
+  //max-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-window__topbar{
@@ -2193,6 +2200,10 @@ footer{
 
 .project-window__inner{
   padding: 1.1rem 1.2rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-window__title{
@@ -2205,22 +2216,30 @@ footer{
 
 .project-window__body{
   margin-top: 1rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-window__columns{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.1rem;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .project-window__col{
   min-width: 0;
+  min-height: 0;
 }
 
 .project-window__col--media{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  height: var(--project-window-media-h);
 }
 
 .project-window__col--desc{
@@ -2228,13 +2247,15 @@ footer{
   flex-direction: column;
   gap: 0.9rem;
   align-items: stretch;
+  min-height: 0;
+  height: var(--project-window-media-h);
 }
 
 .project-window__img,
 .project-window__imgPlaceholder{
   width: 100%;
   max-width: 28rem;
-  height: 16rem;
+  height: var(--project-window-media-h);
   border-radius: 0.8rem;
 }
 
@@ -2256,6 +2277,12 @@ footer{
   color: #e0e0e0;
   text-align: left;
   white-space: pre-line;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.35rem;
 }
 
 .project-window__tags{
@@ -2326,9 +2353,22 @@ footer{
     grid-template-columns: 1fr;
   }
 
+  .project-window{
+    --project-window-media-h: 14rem;
+  }
+
+  .project-window__col--media,
+  .project-window__col--desc{
+    height: auto;
+  }
+
+  .project-window__desc{
+    max-height: 35vh;
+  }
+
   .project-window__img,
   .project-window__imgPlaceholder{
-    height: 14rem;
+    height: var(--project-window-media-h);
   }
 }
 
