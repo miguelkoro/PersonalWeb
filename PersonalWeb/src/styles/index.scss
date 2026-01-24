@@ -2146,7 +2146,7 @@ footer{
   justify-content: center;
   padding: 1.2rem;
   padding-top: calc(5rem + 1.2rem);
-  //padding-bottom: 2.4rem;
+  padding-bottom: 2.4rem;
 
   background: rgba(20, 10, 40, 0.55);
   backdrop-filter: blur(10px);
@@ -2154,11 +2154,11 @@ footer{
 
 .project-window-overlay__content{
   width: min(56rem, 100%);
-  //max-height: calc(100vh - (5rem));
+  max-height: calc(100vh - (5rem));
 }
 
 .project-window{
-  --project-window-media-h: 60vh;
+  --project-window-media-h: 50vh;
   border-radius: 1.1rem;
   background: rgba(103, 53, 240, 0.24);
   backdrop-filter: blur(14px) saturate(140%);
