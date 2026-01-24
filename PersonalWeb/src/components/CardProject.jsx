@@ -1,5 +1,7 @@
 
 const CardProject = (props) => {
+	const { t } = props;
+
 	const handleOpen = () => {
 		if (typeof props.onOpen === 'function') props.onOpen();
 	};
@@ -44,7 +46,7 @@ const CardProject = (props) => {
 			</div>
 
 			<div className="card-projects__more" aria-hidden="true">
-				haz click para saber mas
+				{t('i.knowMore')}
 			</div>
 		</div>
 	);

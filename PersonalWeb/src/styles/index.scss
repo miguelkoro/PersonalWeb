@@ -1232,8 +1232,12 @@ footer{
   //font-size: 1.04rem;
   //font-family: 'Montserrat', sans-serif;
   //color: #fff;
+  flex: 1;
+  display: flex;
+  align-items: center;
   text-align: center;
   line-height: 1.5;
+  font-size: 1.15rem;
   //word-break: break-word;
 }
 // Flip Card: debe ocupar exactamente el 100% del contenedor para que el giro sea centrado
@@ -1345,6 +1349,7 @@ footer{
   height: 100%;
   overflow: visible;
   border-radius: .7rem;
+
 }
 
 .card-studies .card-studies-title {
@@ -1993,6 +1998,7 @@ footer{
     flex-direction: column;
     gap: 0.75rem;
     padding: 1.1rem 1.2rem;
+    flex: 1;
     border-radius: inherit;
     overflow: hidden;
   }
@@ -2075,6 +2081,7 @@ footer{
     gap: 0.5rem;
     width: 100%;
     justify-content: center;
+    margin-top: auto;
   }
 
   .card-projects__tag{
@@ -2248,6 +2255,7 @@ footer{
   line-height: 1.55;
   color: #e0e0e0;
   text-align: left;
+  white-space: pre-line;
 }
 
 .project-window__tags{

@@ -30,27 +30,40 @@ const Projects = () => {
     const projects = [
         {
             id: 'escapp',
-            title: 'ESCAPP',
+            title: t('i.projectTitle1'),
             imageSrc: '/Projects/ESCAPP/Logo_Escapp.png',
-            imageAlt: 'ESCAPP',
-            description: 'Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada djakd add akdj ad ak',
-            longDescription: 'Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada  Description of Project 1 lore iptsim dhsej sjdajdk da j dakdjkada djakd add akdj ad ak',
-            tags: ['HTML', 'CSS'],
-            tagsColor: ['#ca360dff', '#025692ff'],
-            demoUrl: 'https://example.com',
-            githubUrl: 'https://github.com/miguelkoro',
+            imageAlt: t('i.projectTitle1'),
+            description: t('i.projectDescription1'),
+            longDescription: t('i.projectLongDescription1'),
+            tags: ['HTML', 'CSS', 'React', 'JS'],
+            tagsColor: ['#ca360dff', '#025692ff', '#148f14ff', '#c58000ff'],
+            //demoUrl: 'https://example.com',
+            //githubUrl: 'https://github.com/miguelkoro',
         },
         {
-            id: 'p2',
-            title: 'Project 2',
-            description: 'Description of Project 2',
-            longDescription: 'Description of Project 2',
-            tags: [],
+            id: 'WebThreeJS',
+            title: t('i.projectTitle2'),
+            imageSrc: '/Projects/ThreeJS/ThreeJS.png',
+            description: t('i.projectDescription2'),
+            longDescription: t('i.projectLongDescription2'),
+            tags: ['HTML', 'Three.js', 'JS'],
+            tagsColor: ['#ca360dff', '#bb007dff', '#c58000ff'],
+            githubUrl: 'https://github.com/miguelkoro/Threejs',
+            demoUrl: 'https://miguelkoro.github.io/WebPersonal/',
         },
         { id: 'p3', title: 'Project 3', description: 'Description of Project 3', longDescription: 'Description of Project 3', tags: [] },
         { id: 'p4', title: 'Project 4', description: 'Description of Project 4', longDescription: 'Description of Project 4', tags: [] },
-        { id: 'p5', title: 'Project 5', description: 'Description of Project 5', longDescription: 'Description of Project 5', tags: [] },
-        { id: 'p6', title: 'Project 6', description: 'Description of Project 6', longDescription: 'Description of Project 6', tags: [] },
+        { 
+            id: 'WebCanvas', 
+            title: t('i.projectTitle5'), 
+            description: t('i.projectDescription5'), 
+            longDescription: t('i.projectLongDescription5'), 
+            tags: ['HTML', 'CSS', 'JS', 'Canvas'], 
+            tagsColor: ['#ca360dff', '#025692ff', '#c58000ff', '#808080ff'],
+            //imageSrc: '/Projects/Canvas/Canvas.png',
+            githubUrl: 'https://github.com/miguelkoro/TVWeb',
+        },
+        //{ id: 'p6', title: 'Project 6', description: 'Description of Project 6', longDescription: 'Description of Project 6', tags: [] },
     ];
 
 
@@ -78,6 +91,7 @@ const Projects = () => {
                         tags={p.tags}
                         tagsColor={p.tagsColor}
                         onOpen={() => setOpenProject(p)}
+                        t={t}
                     />
                 ))}
             </div>

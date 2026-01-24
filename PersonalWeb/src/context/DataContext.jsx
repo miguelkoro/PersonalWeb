@@ -10,7 +10,13 @@ export const DataProvider = ({ children }) => {
     
     // Función para obtener texto traducido
     const t = (key) => {
-        return LOCALES[language]?.[key] || key;
+        const value = LOCALES[language]?.[key] || key;
+
+        if (typeof value !== 'string') return value;
+
+        // Allow simple line breaks in translations without embedding HTML
+        // Usage in locale strings: "... /br ..." (or "/br" without spaces)
+        return value.replaceAll(/\s*\/br\s*/g, '\n');
     };
 
     return (
