@@ -8,7 +8,7 @@ import NavBar from './components/NavBar.jsx';
 import ThreeBackground from './components/ThreeBackground.jsx';
 import Home from './components/Home.jsx';
 import AboutMe from './components/AboutMe.jsx';
-import Skills from './components/SkillS.jsx';
+import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
