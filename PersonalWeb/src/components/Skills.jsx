@@ -11,18 +11,18 @@ const Skills = () => {
     }, []);
 
     const cardsArray = [
-        <CardCarousel key={1} title="JavaScript" imageSrc="/JS-Logo.png" />,
-        <CardCarousel key={2} title="React" imageSrc="/React-Logo.png" />,
-        <CardCarousel key={3} title="Node.js" imageSrc="/NodeJS-Logo.png" />,
-        <CardCarousel key={4} title="HTML5" imageSrc="/HTML-Logo.png" />,
-        <CardCarousel key={5} title="CSS3" imageSrc="/CSS-Logo.png"  />,
-        <CardCarousel key={6} title="Git" imageSrc="/Git-Logo.png" />,
-        <CardCarousel key={7} title="Docker" imageSrc="/Docker-Logo.png" />,
-        <CardCarousel key={8} title="Python" imageSrc="/Python-Logo.png" />,
-        <CardCarousel key={9} title="MySQL" imageSrc="/mySQL-Logo.png" />,
-        <CardCarousel key={10} title="JSON" imageSrc="/JSON-Logo.png" />,
-        <CardCarousel key={11} title="C#" imageSrc="/CSharp-Logo.png" />,
-        <CardCarousel key={12} title="Java" imageSrc="/Java-Logo.png" />,
+        <CardCarousel key={1} title="JavaScript" imageSrc="/images/logos/JS-Logo.png" />,
+        <CardCarousel key={2} title="React" imageSrc="/images/logos/React-Logo.png" />,
+        <CardCarousel key={3} title="Node.js" imageSrc="/images/logos/NodeJS-Logo.png" />,
+        <CardCarousel key={4} title="HTML5" imageSrc="/images/logos/HTML-Logo.png" />,
+        <CardCarousel key={5} title="CSS3" imageSrc="/images/logos/CSS-Logo.png"  />,
+        <CardCarousel key={6} title="Git" imageSrc="/images/logos/Git-Logo.png" />,
+        <CardCarousel key={7} title="Docker" imageSrc="/images/logos/Docker-Logo.png" />,
+        <CardCarousel key={8} title="Python" imageSrc="/images/logos/Python-Logo.png" />,
+        <CardCarousel key={9} title="MySQL" imageSrc="/images/logos/mySQL-Logo.png" />,
+        <CardCarousel key={10} title="JSON" imageSrc="/images/logos/JSON-Logo.png" />,
+        <CardCarousel key={11} title="C#" imageSrc="/images/logos/CSharp-Logo.png" />,
+        <CardCarousel key={12} title="Java" imageSrc="/images/logos/Java-Logo.png" />,
     ]
     
     return (

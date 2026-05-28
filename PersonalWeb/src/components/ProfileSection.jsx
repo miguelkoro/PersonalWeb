@@ -44,7 +44,7 @@ import Card from "./Card";
                 </div>
                 {/* Imagen grande de fondo */}
                 <img className="about-me-background-image"
-                    src="/about_me.png"
+                    src="/images/about_me/about_me.png"
                     alt="about me"
                 />
                 {/* Dos columnas */}

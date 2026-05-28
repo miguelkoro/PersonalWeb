@@ -32,7 +32,7 @@ function useFollowRotation({ hovered, mouse, baseRotation }) {
 }
 
 function ModelAndCanvasGroup({ mouse, hovered }) {
-  const gltf = useGLTF('/computer_3D/scene.gltf');
+  const gltf = useGLTF('/assets/computer_3D/scene.gltf');
   const baseRotation = [Math.PI/18, -Math.PI/26, 0];
   const groupRef = useFollowRotation({ hovered, mouse, baseRotation });
   return (

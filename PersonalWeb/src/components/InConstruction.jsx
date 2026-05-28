@@ -41,7 +41,7 @@ const InConstruction = () => {
                     {t("i.underConstructionText")}
                 </p>
                 <img
-                    src="/in_construction.jpg"
+                    src="/images/others/in_construction.jpg"
                     alt="Page under construction"
                     style={{
                         maxWidth: '100%',

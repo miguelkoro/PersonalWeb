@@ -10,10 +10,10 @@ function AboutMeSidebar({ currentSection, onSectionChange }) {
     //{ id: 'skills', icon: '🛠️', label: 'Habilidades' },
     { id: 'education', icon: '🎓', label: 'Educación' },
     { id: 'experience', icon: '💼', label: 'Experiencia' },*/
-    { id: 'profile', icon: <img src="/profile_pic.svg"  className="about_me_navbar_icon" />, label:  t('i.profile')  },
+    { id: 'profile', icon: <img src="/images/about_me/profile_pic.svg"  className="about_me_navbar_icon" />, label:  t('i.profile')  },
     //{ id: 'skills', icon: <img src="/skills.png" alt="Habilidades" style={{width: '1.7rem', height: '1.7rem'}} />, label: 'Habilidades' },
-    { id: 'education', icon: <img src="/graduation_cap.png"  className="about_me_navbar_icon"  />, label:  t('i.education')  },
-    { id: 'experience', icon: <img src="/briefcase.svg"  className="about_me_navbar_icon" />, label:  t('i.experience')  },
+    { id: 'education', icon: <img src="/images/about_me/graduation_cap.png"  className="about_me_navbar_icon"  />, label:  t('i.education')  },
+    { id: 'experience', icon: <img src="/images/about_me/briefcase.svg"  className="about_me_navbar_icon" />, label:  t('i.experience')  },
 
   ];
   return (

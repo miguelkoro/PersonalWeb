@@ -46,24 +46,24 @@ export let LOCALES = {
     "i.role": "Role",    
     "i.companySkills": "Skills",
 
-    "i.companyName1": "Aclass",
+    "i.companyName1": "UPM Scholarship",
     "i.companyRole1": "Full-Stack Developer (Internship)",
-    "i.companySkills1": "React, Node.js, Express, MongoDB, HTML, CSS, JavaScript",
-    "i.companyDate1": "Jan 2022 - Jun 2022",
+    "i.companySkills1": "React, Node.js, HTML, CSS, JavaScript",
+    "i.companyDate1": "2025",
 
-    "i.companyName2": "Indra",
+    "i.companyName2": "Eikontada",
     "i.companyRole2": "Junior Developer (Internship)",
-    "i.companySkills2": "Java, Spring Boot, SQL, HTML, CSS, JavaScript",
-    "i.companyDate2": "Jul 2022 - Dec 2022",
+    "i.companySkills2": "C#, Python, Azure, Image recognition project collaboration, Technical support and testing",
+    "i.companyDate2": "2018",
 
-    "i.companyName3": "AZPE Informática",
-    "i.companyRole3": " .NET Developer (Internship)",
-    "i.companySkills3": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
-    "i.companyDate3": "Jan 2023 - Jun 2023",
+    "i.companyName3": "Seeketing",
+    "i.companyRole3": "Systems Administration (Internship)",
+    "i.companySkills3": "Customer service, Raspberry Pi, Embedded systems installation, Technical support and device maintenance",
+    "i.companyDate3": "2016",
 
     "i.companyName4": "Aclass",
-    "i.companyRole4": " .NET Developer (Internship)",
-    "i.companySkills4": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
+    "i.companyRole4": "Systems Administration (Internship)",
+    "i.companySkills4": "Ubuntu server administration, Domain management, Technical support, Customer service",
     "i.companyDate4": "2014",
     //Skills
     "i.skillDev": "Development",
@@ -73,15 +73,16 @@ export let LOCALES = {
     "i.skillDB": "Databases",
     "i.skillDBText": "Experience in designing, implementing, and managing relational databases using SQL. Proficient in writing complex queries, optimizing database performance, and ensuring data integrity.",
     "i.skillTools": "Tools & Technologies",
-    "i.skillToolsText": "Familiarity with version control systems (Git), containerization (Docker), and continuous integration/continuous deployment (CI/CD) practices. Strong problem-solving skills and ability to work in a team environment.",
+    "i.skillToolsText": "Familiarity with version control systems (Git), containerization (Docker), and continuous integration/deployment (CI/CD) practices. Strong problem-solving skills and ability to work in a team environment.",
     "i.skillFrameworks": "Frameworks & Libraries",
-    "i.skillsFrameworksText": "Proficient in popular frameworks and libraries such as React, Node.js, Express, Django, and .NET, enabling efficient development of scalable and maintainable applications.",
-    "i.underconstruction": "Page Under Construction",
-    "i.underconstructionText": "We're working on this page. Check back soon.",
+    "i.skillsFrameworksText": "React (practical use), .NET (basics), Slim 4 and Doctrine (academic exposure)",
+
     //FOOTER
     "i.footerCredits": "3D Model licensed under ",
     //OTHER
     "i.knowMore": "Click to know more",
+    "i.underconstruction": "Page Under Construction",
+    "i.underconstructionText": "We're working on this page. Check back soon.",
     //Projects
     "i.projectTitle1": "ESCAPP",
     "i.projectDescription1": "Development of puzzles and interactive screens for a university educational escape room, using modern web technologies.",
@@ -165,37 +166,39 @@ export let LOCALES = {
 
     "i.companyName2": "Eikontada",
     "i.companyRole2": "Desarrollador Junior (Prácticas)",
-    "i.companySkills2": "Java, Spring Boot, SQL, HTML, CSS, JavaScript",
+    "i.companySkills2": "C#, Python, Azure, Colaboración en proyectos de reconocimiento de imágenes, Soporte técnico y pruebas",
     "i.companyDate2": "2018",
 
     "i.companyName3": "Seeketing",
     "i.companyRole3": "Administración de sistemas (Prácticas)",
-    "i.companySkills3": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
+    "i.companySkills3": "Atención al cliente, Raspberry Pi, Instalación de sistemas embebidos, Soporte técnico y mantenimiento de dispositivos",
     "i.companyDate3": "2016",
 
     "i.companyName4": "Aclass",
     "i.companyRole4": "Administración de sistemas (Prácticas)",
-    "i.companySkills4": "C#, .NET, SQL Server, HTML, CSS, JavaScript",
+    "i.companySkills4": "Administración de servidores Ubuntu, Gestión de dominios, Soporte técnico, Atención al cliente",
     "i.companyDate4": "2014",
 
     //Skills
     "i.skillDev": "Desarrollo",
-    "i.skillDevText": "Experiencia en el desarrollo de aplicaciones web utilizando tecnologías y frameworks modernos. Competente en el desarrollo tanto del lado del cliente como del servidor, con un enfoque en la creación de interfaces receptivas y fáciles de usar.",
+    "i.skillDevText": "Desarrollo de aplicaciones web y de escritorio durante la formación académica y proyectos personales, utilizando tecnologías como JavaScript, React y C#. Enfoque en la creación de interfaces funcionales, código estructurado y aprendizaje continuo.",
     "i.skillSysAdmin": "Administración de Sistemas",
-    "i.skillSysAdminText": "Experiencia en la gestión y mantenimiento de servidores Windows y Linux, incluyendo la instalación, configuración y solución de problemas. Conocimiento de protocolos de red, prácticas de seguridad y monitoreo del sistema.",
+    "i.skillSysAdminText": "Conocimientos en administración básica de sistemas Windows y Linux adquiridos en formación y prácticas, incluyendo instalación de servidores, gestión de servicios, soporte técnico y resolución de incidencias.",
     "i.skillDB": "Bases de Datos",
-    "i.skillDBText": "Experiencia en el diseño, implementación y gestión de bases de datos relacionales utilizando SQL. Competente en la escritura de consultas complejas, optimización del rendimiento de la base de datos y garantía de la integridad de los datos.",
+    "i.skillDBText": "Uso de bases de datos relacionales en proyectos académicos y personales, trabajando con SQL para consultas, gestión de datos y conexión con aplicaciones backend.",
     "i.skillTools": "Herramientas y Metodologías",
-    "i.skillToolsText": "Familiaridad con sistemas de control de versiones (Git), contenedorización (Docker) y prácticas de integración continua/despliegue continuo (CI/CD). Fuertes habilidades de resolución de problemas y capacidad para trabajar en un entorno de equipo.",
+    "i.skillToolsText": "Uso de herramientas de control de versiones como Git, nociones de contenedorización con Docker y familiaridad con integración continua. Acostumbrado a trabajar de forma organizada y a resolver problemas técnicos de manera autónoma.",
     "i.skillFrameworks": "Frameworks y Librerías",
-    "i.skillsFrameworksText": "React, Node.js, Express, Django, .NET",
-    "i.underConstruction": "Página en Construcción",
-    "i.underConstructionText": "Estamos trabajando en esta página. Vuelve pronto.",
+    "i.skillsFrameworksText": "React (uso práctico), .NET (bases), Slim 4 y Doctrine (contacto académico)",
+
+
 
     //FOOTER
     "i.footerCredits": "Modelo 3D bajo licencia ",
     //OTHER
     "i.knowMore": "Haz click para saber más",
+    "i.underConstruction": "Página en Construcción",
+    "i.underConstructionText": "Estamos trabajando en esta página. Vuelve pronto.",
 
     //Proyectos
     "i.projectTitle1": "ESCAPP - Escape Room Educativo (UPM)",

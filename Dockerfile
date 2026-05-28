@@ -4,11 +4,12 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 # copiar dependencias primero (mejor cache)
-COPY package*.json ./
+#COPY package*.json ./
+COPY . .
 RUN npm install
 
 # copiar el resto del proyecto
-COPY . .
+#COPY . .
 
 # build de Vite
 RUN npm run build
