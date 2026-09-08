@@ -29,7 +29,7 @@ const Skills = () => {
         <div>
             <div id="skills" style={{  textAlign: 'center', paddingTop: '1rem' }}>
                 <h2 className="skills-title" style={{textAlign: 'center'}}>{t('i.skills')}</h2>
-                <div style={{marginLeft:"2rem"}}><Carousel cards={cardsArray} /></div>
+                <div className="skills-carousel-wrap" style={{marginLeft:"2rem"}}><Carousel cards={cardsArray} /></div>
                 <div className='card-skills-wrapper' >
                     <SkillSection title={t('i.skillDev')} description={t('i.skillDevText')} svg="M40-120v-80h880v80H40Zm120-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z" />
                     <SkillSection title={t('i.skillSysAdmin')} description={t('i.skillSysAdminText')} svg="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Zm-80 160h160q17 0 28.5-11.5T600-360v-120q0-17-11.5-28.5T560-520v-40q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560v40q-17 0-28.5 11.5T360-480v120q0 17 11.5 28.5T400-320Zm40-200v-40q0-17 11.5-28.5T480-600q17 0 28.5 11.5T520-560v40h-80Z" />

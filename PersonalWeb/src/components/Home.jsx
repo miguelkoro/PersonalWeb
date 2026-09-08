@@ -19,9 +19,9 @@ const Home = () => {
         setScreen('home');
     }, []);
     return (<>
-        <div style={{ position: 'relative', width: '100%',  overflow: 'visible' }} onMouseMove={handlePointerMove}>
+        <div className='home_layout' style={{ position: 'relative', width: '100%',  overflow: 'visible' }} onMouseMove={handlePointerMove}>
             {/* Columna izquierda: texto y botones */}
-            <div style={{
+            <div className='home_content' style={{
                 position: 'relative',
                 width: '35%',
                 minWidth: '35%',
