@@ -826,14 +826,13 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 1rem 0;
+    padding: 0.9rem 0rem 15rem 0rem;
   }
 
   .home_content {
     width: 100% !important;
     min-width: 0 !important;
     max-width: 34rem;
-    margin-top: -18rem;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -847,6 +846,7 @@ footer{
 
   .job_title {
     margin: 0.5rem 0 1.1rem 0;
+    font-size: clamp(1.6rem, 3vw, 5.8rem);
   }
 
   .name_title,
@@ -856,7 +856,7 @@ footer{
 
   .home_buttons {
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .background_PC {
