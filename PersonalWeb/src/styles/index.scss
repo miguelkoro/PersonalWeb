@@ -1206,6 +1206,9 @@ footer{
   border-radius: 0;
   box-shadow: none;
 }
+.about-me-mobile-image {
+  display: none;
+}
 .about-me-subtitle{
   font-size: 1.3rem;
   text-align: left;
@@ -1708,6 +1711,136 @@ footer{
 @keyframes rotate-gear {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+@media (max-width: 768px) {
+  .aboutme-page-shell {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .profile-section-shell {
+    gap: 1.4rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  .profile-title-wrap {
+    margin-left: 0.85rem !important;
+  }
+
+  .about-me-mobile-image {
+    display: block;
+    width: min(100%, 22rem);
+    height: auto;
+    margin: 0 0 0.35rem 0.85rem;
+    border-radius: 0.9rem;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .profile-section-shell .about-me-background-image {
+    display: none;
+  }
+
+  .profile-text-row {
+    min-height: 0 !important;
+    gap: 0.65rem !important;
+    padding-left: 0.85rem;
+    padding-right: 0.6rem;
+  }
+
+  .profile-text-col {
+    flex: 1 1 auto !important;
+    align-items: flex-start !important;
+  }
+
+  .profile-text-line {
+    margin-right: 0.85rem !important;
+  }
+
+  .profile-presentation {
+    margin: 0 !important;
+    font-size: 1.02rem !important;
+    line-height: 1.6 !important;
+    max-width: 34ch;
+  }
+
+  .profile-empty-col {
+    display: none;
+  }
+
+  .profile-cards-wrapper {
+    gap: 1.5rem !important;
+    padding-top: 0.45rem !important;
+  }
+
+  .aboutme-page-content {
+    margin-left: 58px !important;
+    padding-right: 0.6rem;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  #experience {
+    padding-left: 0.85rem !important;
+    padding-right: 0.6rem !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .timeline-experience-wrapper {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+    overflow-x: hidden;
+  }
+
+  .timeline-experience-centered,
+  .timeline-center-narrow {
+    width: 100%;
+    max-width: none;
+    gap: 1.9rem !important;
+  }
+
+  .timeline-center-column {
+    width: 100%;
+  }
+
+  .timeline-row,
+  .timeline-row-left,
+  .timeline-row-right {
+    justify-content: flex-start;
+  }
+
+  .timeline-row-left .timeline-card-terminal.left,
+  .timeline-row-right .timeline-card-terminal.right {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .timeline-card-terminal {
+    width: calc(100vw - 5.4rem);
+    max-width: calc(100vw - 5.4rem) !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.75rem 0.8rem !important;
+    font-size: 0.92rem !important;
+    box-sizing: border-box;
+  }
+
+  .timeline-card-terminal:hover{
+    transform: none;
+  }
+
+  .timeline-bar-vertical,
+  .timeline-bar-circle-wrapper {
+    display: none;
+  }
+
+  .terminal-text p {
+    margin-left: 0 !important;
+  }
 }
 /* Terminal text colors */
 .terminal-text{

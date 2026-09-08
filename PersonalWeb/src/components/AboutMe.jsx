@@ -119,9 +119,9 @@ const AboutMe = () => {
 
     return (
         <>
-        <div style={{ display: 'flex', minHeight: '100% - 5rem)' }}>
+        <div className="aboutme-page-shell" style={{ display: 'flex', minHeight: '100% - 5rem)' }}>
             <AboutMeSidebar currentSection={section} onSectionChange={setSection} />
-            <div style={{ marginLeft: 60, flex: 1 }}>
+            <div className="aboutme-page-content" style={{ marginLeft: 60, flex: 1 }}>
                 {sectionOrder.map(sec => (
                     <section
                         key={sec}

@@ -1,8 +1,9 @@
-import CardStudies from "./CardStudies";
 import Card from "./Card";
 
     const ProfileSection = (props) => {
         const { t } = props;
+        const desktopProfileImageSrc = "/images/about_me/about_me.png";
+        const mobileProfileImageSrc = "/images/about_me/about_me_mobile.png";
 
         const cardSVG = [
                     <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px">
@@ -36,29 +37,38 @@ import Card from "./Card";
         ]
 
         return (
-            <div style={{ position: 'relative', display: 'flex', paddingBottom: "2.5rem",  flexDirection: 'column', gap: '2.5rem', minHeight: 420 }}>
+            <div className="profile-section-shell" style={{ position: 'relative', display: 'flex', paddingBottom: "2.5rem",  flexDirection: 'column', gap: '2.5rem', minHeight: 420 }}>
                 {/* Título */}
-                <div style={{position: 'relative', width: 'fit-content', textAlign: 'left', marginLeft: "2rem"}}>
+                <div className="profile-title-wrap" style={{position: 'relative', width: 'fit-content', textAlign: 'left', marginLeft: "2rem"}}>
                     <h1 className="about-me-title" style={{textAlign: 'left', marginBottom: "1rem"}}>{t('i.aboutme')}</h1>
                     {/*<div style={{height: 4, width: '160%', background: 'linear-gradient(90deg, #ffffffff 0%, #ffffffff 100%)',  marginTop: 0}} />*/}
                 </div>
+                <img
+                    className="about-me-mobile-image"
+                    src={mobileProfileImageSrc}
+                    alt="about me"
+                    onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = desktopProfileImageSrc;
+                    }}
+                />
                 {/* Imagen grande de fondo */}
                 <img className="about-me-background-image"
-                    src="/images/about_me/about_me.png"
+                    src={desktopProfileImageSrc}
                     alt="about me"
                 />
                 {/* Dos columnas */}
-                <div style={{ display: 'flex', gap: '2rem', alignItems: 'stretch', minHeight: 220, position: 'relative', zIndex: 1 }}>
+                <div className="profile-text-row" style={{ display: 'flex', gap: '2rem', alignItems: 'stretch', minHeight: 220, position: 'relative', zIndex: 1 }}>
                     {/* Columna texto con línea */}
-                    <div style={{ flex: '0 0 50%', display: 'flex', alignItems: 'center' }}>
-                        <div style={{ borderLeft: '3px solid #fff', height: '100%', marginRight: "3rem" }} />
-                        <p style={{ margin: 0, fontSize: '1.3rem', lineHeight: 1.8, textAlign: "left" }}>{t('i.presentation')}</p>
+                    <div className="profile-text-col" style={{ flex: '0 0 50%', display: 'flex', alignItems: 'center' }}>
+                        <div className="profile-text-line" style={{ borderLeft: '3px solid #fff', height: '100%', marginRight: "3rem" }} />
+                        <p className="about-me-subtitle profile-presentation" style={{ margin: 0, fontSize: '1.3rem', lineHeight: 1.8, textAlign: "left" }}>{t('i.presentation')}</p>
                     </div>
                     {/* Columna vacía para mantener el layout */}
-                    <div style={{ flex: '0 0 50%' }} />
+                    <div className="profile-empty-col" style={{ flex: '0 0 50%' }} />
                 </div>
                 {/* Cards de ejemplo */}
-                <div className="card-management-wrapper">
+                <div className="card-management-wrapper profile-cards-wrapper">
                     <Card title={t('i.cardFavoriteTechs')} description={t('i.cardFavoriteTechsDescription')} svg={cardSVG[0]} />
                     <Card title={t('i.cardInterests')} description={t('i.cardInterestsDescription')} svg={cardSVG[1]} />
                     <Card title={t('i.cardObjectives')} description={t('i.cardObjectivesDescription')} svg={cardSVG[2]} />
